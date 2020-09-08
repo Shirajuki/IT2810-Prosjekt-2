@@ -35,5 +35,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.stud.idi.ntnu.no/it2810-h20/team-07/prosjekt-2.git"
+  },
+  "author": "",
+  "license": "ISC"
 }
