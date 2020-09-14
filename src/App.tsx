@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Poem from "./Poem";
-
+import Slideshow from "./Slideshow";
 function App() {
 	return (
 		<>
@@ -11,7 +11,7 @@ function App() {
 					<div>
 						<h1>
 							<a href="index.html" className="logo">
-								Lionsgate
+								Kunst ustilling
 							</a>
 						</h1>
 						<nav>
@@ -24,37 +24,9 @@ function App() {
 				</header>
 				<br />
 				<main>
-					<div className="splash">
-						<div className="div1">
-							<img src="a.jpg"/>
-							<div>
-								<p className="titlefont">Trees on the horizon</p>
-							</div>
-						</div>
-						<div className="div2">
-							<img src="a.jpg" />
-							<div>
-								<p className="titlefont">Some special title</p>
-							</div>
-						</div>
-						<div className="div3">
-							<img src="a.jpg" />
-							<div>
-								<p className="titlefont">A to be beautiful art</p>
-							</div>
-						</div>
-						<div className="div4">
-							<div>
-								<h1 className="title">Trees on the horizon</h1>
-							</div>
-						</div>
-						<div className="div5">
-							<img src="a.jpg" />
-						</div>
-					</div>
+					<Slideshow />
 					<div className="bigPoetry">
 						<div className="poetryBox">
-
 							<p>Red lights green lights strawberry lime</p>
 							<p>A girl just died and she was a friend of mine</p>
 							<p>We used to sing and dance and twirl in the pines</p>
@@ -154,5 +126,6 @@ function App() {
 		</>
 	);
 }
+// <Poem title={"Peace is a fiction of our Faith --"}></Poem>
 
 export default App;
