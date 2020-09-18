@@ -11,7 +11,7 @@ function App() {
 					<div>
 						<h1>
 							<a href="index.html" className="logo">
-								Kunst ustilling
+								Kunst utstilling
 							</a>
 						</h1>
 						<nav>

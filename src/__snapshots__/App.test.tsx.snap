@@ -1,0 +1,368 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Component /> spec renders the component 1`] = `
+<div
+  class="wrapper"
+>
+  <header>
+    <div>
+      <h1>
+        <a
+          class="logo"
+          href="index.html"
+        >
+          Kunst utstilling
+        </a>
+      </h1>
+      <nav>
+        <a
+          href="#"
+        >
+          nav1
+        </a>
+        <a
+          href="#"
+        >
+          nav2
+        </a>
+        <a
+          href="#"
+        >
+          nav3
+        </a>
+        <a
+          href="#"
+        >
+          nav4
+        </a>
+      </nav>
+    </div>
+  </header>
+  <br />
+  <main>
+    <div
+      class="Slideshow"
+    >
+      <div
+        class="splash"
+      >
+        <div
+          class="div1 active"
+        >
+          <img
+            alt=""
+            src="https://via.placeholder.com/750x450?text=1"
+          />
+          <div>
+            <p
+              class="titlefont"
+            >
+              Test1
+            </p>
+          </div>
+        </div>
+        <div
+          class="div2 inactive"
+        >
+          <img
+            alt=""
+            src="https://via.placeholder.com/750x450?text=2"
+          />
+          <div>
+            <p
+              class="titlefont"
+            >
+              Test2
+            </p>
+          </div>
+        </div>
+        <div
+          class="div3 inactive"
+        >
+          <img
+            alt=""
+            src="https://via.placeholder.com/750x450?text=3"
+          />
+          <div>
+            <p
+              class="titlefont"
+            >
+              Test3
+            </p>
+          </div>
+        </div>
+        <div
+          class="div4"
+        >
+          <div>
+            <h1
+              class="title"
+            >
+              Test1
+            </h1>
+          </div>
+        </div>
+        <div
+          class="div5"
+        >
+          <img
+            alt=""
+            src="https://via.placeholder.com/750x450?text=1"
+          />
+          <div
+            class="btnWrapper"
+          >
+            <a
+              class="button"
+            >
+              &gt;&gt;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bigPoetry"
+    >
+      <div
+        class="poetryBox"
+      >
+        <p>
+          Red lights green lights strawberry lime
+        </p>
+        <p>
+          A girl just died and she was a friend of mine
+        </p>
+        <p>
+          We used to sing and dance and twirl in the pines
+        </p>
+        <p>
+          But now shes gone and she was a friend of mine
+        </p>
+        <p>
+          laugh out loud and cry inside
+        </p>
+        <p>
+          life’ so large... Who’s in charge
+        </p>
+        <p>
+          lost track of time
+        </p>
+        <p>
+          Now she’s gone. And she was a friend of mine
+        </p>
+        <p>
+          I never thought I’d feel the way I do now
+        </p>
+        <p>
+          I never thought I could feel so much pain
+        </p>
+        <p>
+          Oh God please. Wait...God can’t stop the rain
+        </p>
+        <p>
+          Now she’s gone and she was a friend of mine.
+        </p>
+      </div>
+    </div>
+    <div
+      class="sectionsplit"
+    />
+    <div
+      class="sectionsplit"
+    />
+    <div
+      class="tabBox"
+    >
+      <a
+        href="#"
+      >
+        Tab 1
+      </a>
+      <a
+        href="#"
+      >
+        Tab 2
+      </a>
+    </div>
+    <div
+      class="artWrapper"
+    >
+      <div
+        class="art1"
+      >
+        <div>
+          <img
+            src="a.jpg"
+          />
+        </div>
+        <div>
+          <div
+            class="poetryBox"
+          >
+            <h2
+              class="titlefont"
+            >
+              Art title here
+            </h2>
+            <p>
+              Red lights green lights strawberry lime
+            </p>
+            <p>
+              A girl just died and she was a friend of mine
+            </p>
+            <p>
+              We used to sing and dance and twirl in the pines
+            </p>
+            <p>
+              But now shes gone and she was a friend of mine
+            </p>
+            <p>
+              laugh out loud and cry inside
+            </p>
+            <p>
+              life’ so large... Who’s in charge
+            </p>
+            <p>
+              lost track of time
+            </p>
+            <p>
+              Now she’s gone. And she was a friend of mine
+            </p>
+            <p>
+              I never thought I’d feel the way I do now
+            </p>
+            <p>
+              I never thought I could feel so much pain
+            </p>
+            <p>
+              Oh God please. Wait...God can’t stop the rain
+            </p>
+            <p>
+              Now she’s gone and she was a friend of mine.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="art2"
+      >
+        <div>
+          <img
+            src="a.jpg"
+          />
+        </div>
+        <div>
+          <div
+            class="poetryBox reversed"
+          >
+            <h2
+              class="titlefont"
+            >
+              Art title here
+            </h2>
+            <p>
+              Red lights green lights strawberry lime
+            </p>
+            <p>
+              A girl just died and she was a friend of mine
+            </p>
+            <p>
+              We used to sing and dance and twirl in the pines
+            </p>
+            <p>
+              But now shes gone and she was a friend of mine
+            </p>
+            <p>
+              laugh out loud and cry inside
+            </p>
+            <p>
+              life’ so large... Who’s in charge
+            </p>
+            <p>
+              lost track of time
+            </p>
+            <p>
+              Now she’s gone. And she was a friend of mine
+            </p>
+            <p>
+              I never thought I’d feel the way I do now
+            </p>
+            <p>
+              I never thought I could feel so much pain
+            </p>
+            <p>
+              Oh God please. Wait...God can’t stop the rain
+            </p>
+            <p>
+              Now she’s gone and she was a friend of mine.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="art3"
+      >
+        <div>
+          <img
+            src="a.jpg"
+          />
+        </div>
+        <div>
+          <div
+            class="poetryBox"
+          >
+            <h2
+              class="titlefont"
+            >
+              Art title here
+            </h2>
+            <p>
+              Red lights green lights strawberry lime
+            </p>
+            <p>
+              A girl just died and she was a friend of mine
+            </p>
+            <p>
+              We used to sing and dance and twirl in the pines
+            </p>
+            <p>
+              But now shes gone and she was a friend of mine
+            </p>
+            <p>
+              laugh out loud and cry inside
+            </p>
+            <p>
+              life’ so large... Who’s in charge
+            </p>
+            <p>
+              lost track of time
+            </p>
+            <p>
+              Now she’s gone. And she was a friend of mine
+            </p>
+            <p>
+              I never thought I’d feel the way I do now
+            </p>
+            <p>
+              I never thought I could feel so much pain
+            </p>
+            <p>
+              Oh God please. Wait...God can’t stop the rain
+            </p>
+            <p>
+              Now she’s gone and she was a friend of mine.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sectionsplit"
+    />
+    <div
+      id="root"
+    />
+  </main>
+</div>
+`;
