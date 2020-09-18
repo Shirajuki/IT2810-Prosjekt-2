@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Installation from "./Installation";
 import { IoMdClose } from "react-icons/io";
