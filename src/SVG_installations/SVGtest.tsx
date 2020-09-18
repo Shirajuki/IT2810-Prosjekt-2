@@ -5,7 +5,6 @@ import Poem from "../Poem";
 function Test() {
   return (
     <div className="App">
-      <div className="App-header"></div>
       <svg width="650" height="350" fill="lightblue">
         <rect x="0" y="0" width="650" height="350" fill="lightblue"></rect>
         <circle cx="450" cy="50" r="50" fill="yellow"></circle>

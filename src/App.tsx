@@ -9,6 +9,10 @@ import Test from "./SVG_installations/SVGtest";
 import Moon from "./canvas_installations/moon";
 import Snow from "./canvas_installations/snow";
 
+import BlackForest from "./SVG_installations/BlackForest";
+import Birch from "./canvas_installations/birch";
+import WallFlower from "./canvas_installations/wallFlower";
+
 function App() {
   const [modal, setModal] = useState({
     title: "",

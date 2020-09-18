@@ -1,42 +1,42 @@
 import React, { useEffect, useRef, useState } from "react";
 import Poem from "../Poem";
 
-function wallFlower() {
-  const canvas = useRef<HTMLCanvasElement>(null);
-  const [ctx, setCtx] = useState(null);
+function WallFlower() {
+	const canvas = useRef<HTMLCanvasElement>(null);
+	const [ctx, setCtx] = useState(null);
 
-  useEffect(() => {
-    setCtx(canvas.current?.getContext("2d"));
-  }, [canvas]);
-  const drawPineTrees = (ctx: CanvasRenderingContext2D, x: number, y: number, rot?: number) => {
-	rot = rot || 0;
-	ctx.save()
-	ctx.translate(x + 750 / 2, y + 450 / 2);
-	ctx.rotate(rot);
-	ctx.beginPath();
-	ctx.fillStyle = "black";
-	ctx.fillRect(x,y,7,28);
-	ctx.closePath();
-	ctx.beginPath();
-	ctx.fillStyle = "black";
-	ctx.ellipse(x-1.5, y+29, 6, 8, Math.PI/2.5, 0, 2*Math.PI);
-	ctx.fill();
-	ctx.closePath();
-	ctx.beginPath();
-	ctx.fillStyle = "black";
-	ctx.fillRect(x,y,20,7);
-	ctx.closePath();
-	ctx.restore();
+	useEffect(() => {
+		setCtx(canvas.current?.getContext("2d"));
+	}, [canvas]);
+	const drawNotes = (ctx: CanvasRenderingContext2D, x: number, y: number, rot?: number) => {
+		rot = rot || 0;
+		ctx.save()
+		ctx.translate(x + 750 / 2, y + 450 / 2);
+		ctx.rotate(rot);
+		ctx.beginPath();
+		ctx.fillStyle = "black";
+		ctx.fillRect(x,y,7,28);
+		ctx.closePath();
+		ctx.beginPath();
+		ctx.fillStyle = "black";
+		ctx.ellipse(x-1.5, y+29, 6, 8, Math.PI/2.5, 0, 2*Math.PI);
+		ctx.fill();
+		ctx.closePath();
+		ctx.beginPath();
+		ctx.fillStyle = "black";
+		ctx.fillRect(x,y,20,7);
+		ctx.closePath();
+		ctx.restore();
 	}
-  const draw = (ctx: CanvasRenderingContext2D) => {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.clearRect(0,0,750,450);
+	const draw = (ctx: CanvasRenderingContext2D) => {
+		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		ctx.clearRect(0,0,750,450);
 		ctx.beginPath();
 		ctx.fillStyle = "#ffe0f8";
 		ctx.fillRect(0,0,750,450);
 		ctx.closePath();
 		// Background
-			// Wall
+		// Wall
 		ctx.beginPath();
 		ctx.fillStyle = "#91d700";
 		ctx.moveTo(0, 250);
@@ -46,7 +46,7 @@ function wallFlower() {
 		ctx.lineTo(0, 250);
 		ctx.fill();
 		ctx.closePath();
-			// Floor
+		// Floor
 		ctx.beginPath();
 		ctx.fillStyle = "#91d7ff";
 		ctx.fillRect(0,245,750,205);
@@ -238,7 +238,7 @@ function wallFlower() {
 		ctx.lineTo(670, 400);
 		ctx.fill();
 		ctx.closePath();
-			// Petal
+		// Petal
 		ctx.beginPath();
 		ctx.fillStyle = "#a897a4";
 		ctx.arc(590,245,30,0,2*Math.PI);
@@ -269,18 +269,18 @@ function wallFlower() {
 		ctx.arc(643,245,30,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
-  };
+	};
 
-  useEffect(() => {
-    if (ctx) draw(ctx);
-  }, [ctx]);
+	useEffect(() => {
+		if (ctx) draw(ctx);
+	}, [ctx]);
 
-  return (
-    <>
-      <canvas ref={canvas} width="750" height="450" />
-      <Poem title={"A Wall Flower"}></Poem>
-    </>
-  );
+	return (
+		<>
+			<canvas ref={canvas} width="750" height="450" />
+			<Poem title={"A Wall Flower"}></Poem>
+		</>
+	);
 }
 
-export default wallFlower;
+export default WallFlower;

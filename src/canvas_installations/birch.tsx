@@ -2,15 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import Poem from "../Poem";
 
 function Birch() {
-  const canvas = useRef<HTMLCanvasElement>(null);
-  const [ctx, setCtx] = useState(null);
+	const canvas = useRef<HTMLCanvasElement>(null);
+	const [ctx, setCtx] = useState(null);
 
-  useEffect(() => {
-    setCtx(canvas.current?.getContext("2d"));
-  }, [canvas]);
-  const drawPineTrees = (ctx: CanvasRenderingContext2D, x: number, y: number, sX?: number, sY?: number) => {
-    sX = sX || 1;
-    sY = sY || 1;
+	useEffect(() => {
+		setCtx(canvas.current?.getContext("2d"));
+	}, [canvas]);
+	const drawPineTrees = (ctx: CanvasRenderingContext2D, x: number, y: number, sX?: number, sY?: number) => {
+		sX = sX || 1;
+		sY = sY || 1;
 		// Scaled rectangle
 		ctx.scale(sX, sY);
 		// Pine trees
@@ -27,7 +27,7 @@ function Birch() {
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
-			// Leaves
+		// Leaves
 		ctx.beginPath();
 		ctx.fillStyle = "#1a5234";
 		ctx.moveTo(x-39.5, y-20);
@@ -55,15 +55,15 @@ function Birch() {
 		// Reset current transformation matrix to the identity matrix
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
 	}
-  const draw = (ctx: CanvasRenderingContext2D) => {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.beginPath();
-    ctx.beginPath();
+	const draw = (ctx: CanvasRenderingContext2D) => {
+		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		ctx.beginPath();
+		ctx.beginPath();
 		ctx.fillStyle = "#ffe0f8";
 		ctx.fillRect(0,0,750,450);
 		ctx.closePath();
 		// Background
-			// Mountain back
+		// Mountain back
 		ctx.beginPath();
 		ctx.fillStyle = "#91d7ff";
 		ctx.moveTo(0, 120);
@@ -94,7 +94,7 @@ function Birch() {
 		ctx.lineTo(0, 120);
 		ctx.fill();
 		ctx.closePath();
-			// Sun
+		// Sun
 		ctx.beginPath();
 		ctx.fillStyle = "#fffcc9";
 		ctx.arc(180,130,110,0,2*Math.PI);
@@ -115,7 +115,7 @@ function Birch() {
 		ctx.arc(180,130,80,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
-			// Mountain front
+		// Mountain front
 		ctx.beginPath();
 		ctx.fillStyle = "#a8ffe5";
 		ctx.moveTo(0, 150);
@@ -147,9 +147,9 @@ function Birch() {
 		ctx.lineTo(0, 150);
 		ctx.fill();
 		ctx.closePath();
-	
+
 		// Grassland
-			// big circle
+		// big circle
 		ctx.beginPath();
 		ctx.fillStyle = "#3c8c38";
 		ctx.arc(500,470,340,0,2*Math.PI);
@@ -160,7 +160,7 @@ function Birch() {
 		ctx.arc(500,470,330,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
-			// small circle 
+		// small circle 
 		ctx.beginPath();
 		ctx.fillStyle = "#3c8c38";
 		ctx.arc(140,450,230,0,2*Math.PI);
@@ -171,15 +171,15 @@ function Birch() {
 		ctx.arc(140,450,220,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
-	
+
 		// Birch tree
-			// Spot
+		// Spot
 		ctx.beginPath();
 		ctx.fillStyle = "#3d913f";
 		ctx.ellipse(410, 230, 27, 55, Math.PI/2, 0, 2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
-			// Stump/Bark
+		// Stump/Bark
 		ctx.beginPath();
 		ctx.fillStyle = "#f5e9e6";
 		ctx.lineWidth = 4;
@@ -196,7 +196,7 @@ function Birch() {
 		ctx.lineTo(400, 230);
 		ctx.fill();
 		ctx.closePath();
-			// Person
+		// Person
 		ctx.beginPath();
 		ctx.fillStyle = "black";
 		ctx.rect(419,160,4,55);
@@ -239,7 +239,7 @@ function Birch() {
 		ctx.ellipse(435, 218, 6, 3, Math.PI/2.2, 0, 2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
-			// Leaves
+		// Leaves
 		ctx.beginPath();
 		ctx.fillStyle = "#baff30";
 		ctx.ellipse(380, 115, 20, 25, Math.PI/2, 0, 2*Math.PI);
@@ -269,23 +269,23 @@ function Birch() {
 		drawPineTrees(ctx,60.5,330);
 		drawPineTrees(ctx,5,220,1.9,1.9);
 		drawPineTrees(ctx,60,300,1.6,1.6);
-			// Other side
+		// Other side
 		drawPineTrees(ctx,465,265,1.3,1.3);
 		drawPineTrees(ctx,400,200,1.7,1.7);
 		drawPineTrees(ctx,320,210,2,2);
 		drawPineTrees(ctx,340,215,2.1,2.1);
-  };
+	};
 
-  useEffect(() => {
-    if (ctx) draw(ctx);
-  }, [ctx]);
+	useEffect(() => {
+		if (ctx) draw(ctx);
+	}, [ctx]);
 
-  return (
-    <>
-      <canvas ref={canvas} width="750" height="450" />
-      <Poem title={"The Birch-Tree at Loschwitz"}></Poem>
-    </>
-  );
+	return (
+		<>
+			<canvas ref={canvas} width="750" height="450" />
+			<Poem title={"The Birch-Tree at Loschwitz"}></Poem>
+		</>
+	);
 }
 
 export default Birch;

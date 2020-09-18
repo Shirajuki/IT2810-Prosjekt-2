@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
-import "./App.css";
 import Poem from "../Poem";
 
-function blackForest() {
+function BlackForest() {
   return (
     <div className="App">
-      <div className="App-header"></div>
-      <svg width="750" height="450" viewBox="0 0 750 450" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 750 450" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="grass" x="0" y="0" width="60" height="40" patternUnits="objectBoundingBox">
             <path d="m 25 38 l -20 -20 l 15 5 z" fill="cadetblue"/>
@@ -84,4 +82,4 @@ function blackForest() {
   );
 }
 
-export default blackForest;
+export default BlackForest;
