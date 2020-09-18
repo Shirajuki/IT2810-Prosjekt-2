@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-const prefixUrl = "https://cors-anywhere.herokuapp.com/http://poetrydb.org";
+const prefixUrl = "https://poetrydb.org";
 
 interface IProps {
   title: string;
@@ -9,6 +9,7 @@ function Poem({ title }: IProps) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    console.log(prefixUrl + "/title/" + title + "/lines.json");
     fetch(prefixUrl + "/title/" + title + "/lines.json")
       .then((results) => results.json())
       .then((poem) => {
@@ -20,7 +21,6 @@ function Poem({ title }: IProps) {
 
   return (
     <div>
-      {console.log(prefixUrl + "/title/" + title + "/lines.json")}
       {data.map((item: string) => (
         <p key={item}>{item}</p>
       ))}

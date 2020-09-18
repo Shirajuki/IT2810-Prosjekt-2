@@ -1,16 +1,27 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState, useEffect } from "react";
 import Poem from "./Poem";
+import "./App.css";
+import Moon from "./moon";
 
-function App() {
+interface IProps {
+  title: string;
+  picture: string;
+  sound: string;
+}
+function Installation({ title, picture, sound }: IProps) {
   return (
-    <div className="App">
-      <div className="headers"></div>
-
-      <Poem title={"Peace is a fiction of our Faith --"}></Poem>
-    </div>
+    <>
+      <h1 className="installation-title">{title}</h1>
+      <div className="installation-wrapper">
+        <Moon></Moon>
+        <div className="poem-container">
+          <Poem title={title}></Poem>
+        </div>
+        <audio id="my_audio" src={sound} autoPlay loop></audio>
+      </div>
+    </>
   );
 }
 
-export default App;
+//<img className="installation-image" src={picture} />
+export default Installation;
