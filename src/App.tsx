@@ -160,9 +160,7 @@ function App() {
           ></Installation>
         </div>
       </div>
-      <Test></Test>
-      <Moon></Moon>
-      <Snow></Snow>
+
       <footer>
         <p>this is a footer</p>
       </footer>
