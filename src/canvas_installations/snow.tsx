@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Poem from "./Poem";
+import Poem from "../Poem";
 
 function Moon() {
   const canvas = useRef<HTMLCanvasElement>(null);

@@ -5,9 +5,9 @@ import Installation from "./Installation";
 import { IoMdClose } from "react-icons/io";
 import Poem from "./Poem";
 import Slideshow from "./Slideshow";
-import Test from "./SVGtest";
-import Moon from "./moon";
-import Snow from "./snow";
+import Test from "./SVG_installations/SVGtest";
+import Moon from "./canvas_installations/moon";
+import Snow from "./canvas_installations/snow";
 
 function App() {
   const [modal, setModal] = useState({

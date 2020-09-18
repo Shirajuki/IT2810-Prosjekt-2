@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Poem from "./Poem";
 import "./App.css";
-import Moon from "./moon";
+import Moon from "./canvas_installations/moon";
 
 interface IProps {
   title: string;
