@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Poem from "./Poem";
+import InstallationDisplay from "./InstallationDisplay";
+
 type slideType = {
 	id: string,
 	image: string,
@@ -25,6 +28,11 @@ class Slide extends Component<SlideshowProps,SlideshowState> {
 		return (
 			<div className="Slideshow">
 				<Display count={this.state.count} slides={this.props.slides} setSlide={this.setSlide.bind(this)} changeSlide={this.changeSlide.bind(this)}/>
+				<div className="bigPoetry">
+					<div className="poetryBox">
+						<Poem title={this.props.slides[this.state.count].title} />
+					</div>
+				</div>
 			</div>
 		);
 	}
@@ -33,19 +41,19 @@ const Display = (props: {count: number, slides: slideType[], setSlide: (n: numbe
 	return (
 		<div className="splash">
 			<div className={`div1 ${props.count === 0 ? "active" : "inactive"}`} onClick={() => props.setSlide(0)}>
-				<img src={props.slides[0].image} alt=""/>
+				<InstallationDisplay title={props.slides[0].title}></InstallationDisplay>
 				<div>
 					<p className="titlefont">{props.slides[0].title}</p>
 				</div>
 			</div>
 			<div className={`div2 ${props.count === 1 ? "active" : "inactive"}`} onClick={() => props.setSlide(1)}>
-				<img src={props.slides[1].image} alt=""/>
+				<InstallationDisplay title={props.slides[1].title}></InstallationDisplay>
 				<div>
 					<p className="titlefont">{props.slides[1].title}</p>
 				</div>
 			</div>
 			<div className={`div3 ${props.count === 2 ? "active" : "inactive"}`} onClick={() => props.setSlide(2)}>
-				<img src={props.slides[2].image} alt=""/>
+				<InstallationDisplay title={props.slides[2].title}></InstallationDisplay>
 				<div>
 					<p className="titlefont">{props.slides[2].title}</p>
 				</div>
@@ -56,29 +64,30 @@ const Display = (props: {count: number, slides: slideType[], setSlide: (n: numbe
 				</div>
 			</div>
 			<div className="div5">
-				<img src={props.slides[props.count].image} alt=""/>
+				<InstallationDisplay title={props.slides[props.count].title}></InstallationDisplay>
 				<div className="btnWrapper">
 					<a className="button" onClick={() => props.changeSlide()}>>></a>
 				</div>
 			</div>
 		</div>
+
 	);
 }
 const slides: slideType[] = [
 	{
 		id: "slide1",
 		image: "https://via.placeholder.com/750x450?text=1",
-		title: "Test1",
+		title: "A Wall Flower",
 	},
 	{
 		id: "slide2",
 		image: "https://via.placeholder.com/750x450?text=2",
-		title: "Test2",
+		title: "In the Black Forest",
 	},
 	{
 		id: "slide3",
 		image: "https://via.placeholder.com/750x450?text=3",
-		title: "Test3",
+		title: "The Birch-Tree at Loschwitz",
 	},
 ];
 function Slideshow() {

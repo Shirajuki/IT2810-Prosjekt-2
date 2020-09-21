@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Poem from "../Poem";
 
-function BlackForest() {
+interface IProps {
+	onClick: () => void;
+}
+function BlackForest({onClick}: IProps) {
   return (
-    <div className="App">
+    <div className="canvas" onClick={onClick}>
       <svg viewBox="0 0 750 450" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="grass" x="0" y="0" width="60" height="40" patternUnits="objectBoundingBox">
@@ -74,9 +77,6 @@ function BlackForest() {
           <path d="m 425,350 0,0 0,0 c -15,-110 85, -110 75,0 z" fill="#9f9f9f"/>
         </g>
         </svg>
-      <Poem
-        title={"In the Black Forest"}
-      ></Poem>
     </div>
   );
 }

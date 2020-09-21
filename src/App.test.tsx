@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
+import 'jest-canvas-mock';
 
 // https://testing-library.com/docs/react-testing-library/api
 // https://itnext.io/testing-components-with-jest-and-react-testing-library-d36f5262cde2
@@ -10,7 +11,7 @@ test('renders without crashing', () => {
 
 test('renders with slideshow props', () => {
 	const { getAllByText } = render(<App />)
-	expect(getAllByText('Test1')[0]).toBeInTheDocument();
+	expect(getAllByText('In the Black Forest')[0]).toBeInTheDocument();
 })
 describe('Mulig å få delt opp som dette også <App /> spec', () => {
 	it('renders the component', () => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Poem from "../Poem";
 
-function Moon() {
+function Snow() {
   const canvas = useRef<HTMLCanvasElement>(null);
   const [ctx, setCtx] = useState(null);
   const interval = useRef(null);
@@ -105,9 +105,8 @@ function Moon() {
   return (
     <>
       <canvas ref={canvas} width="650" height="350" />
-      <Poem title={"The Moon, how definite its orb! (fragment)"}></Poem>
     </>
   );
 }
 
-export default Moon;
+export default Snow;

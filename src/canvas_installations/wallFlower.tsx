@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import Poem from "../Poem";
 
-function WallFlower() {
+interface IProps {
+	onClick: () => void;
+}
+function WallFlower({onClick}: IProps) {
 	const canvas = useRef<HTMLCanvasElement>(null);
 	const [ctx, setCtx] = useState(null);
 
@@ -277,8 +280,7 @@ function WallFlower() {
 
 	return (
 		<>
-			<canvas ref={canvas} width="750" height="450" />
-			<Poem title={"A Wall Flower"}></Poem>
+			<canvas onClick={onClick} ref={canvas} width="750" height="450" />
 		</>
 	);
 }
