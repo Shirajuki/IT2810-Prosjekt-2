@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import Poem from "../Poem";
+import wavingMan from "./wavingPerson.svg";
 
-function SVGHome() {
+function Home() {
     return (
       <div className="App">
         <div className="App-header"></div>
@@ -31,7 +32,7 @@ function SVGHome() {
           <rect id="house" height="90" width="70" x="105" y="340"  fill="rgb(117,0,0)" />
           <polygon id="houseRoof" points="85,340 140,320 195,340" fill="rgb(117,0,0)" />
           <rect height="40" width="30" x="125" y="390" fill="rgb(255,255,204)" />
-          <image id="doorImg" width="30px" height="40px"  x="125" y="390" href="wavingPerson.png"/>
+          <image id="doorImg" width="30px" height="40px"  x="125" y="390" href={wavingMan}/>
           <rect id="doorClosed" height="40" width="30" x="125" y="390" fill="black" visibility="visible">
           <animate
                   attributeName="x"
@@ -50,5 +51,5 @@ function SVGHome() {
     );
   }
   
-  export default SVGHome;
+  export default Home;
   
