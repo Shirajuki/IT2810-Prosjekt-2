@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Poem from "../Poem";
 interface IProps {
-	onClick: () => void;
+  onClick: () => void;
 }
-function Moon({onClick}: IProps) {
+//("The Moon, how definite its orb! (fragment)");
+
+function Moon({ onClick }: IProps) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const [ctx, setCtx] = useState(null);
   var imgNightSky = new Image();
@@ -274,7 +276,7 @@ function Moon({onClick}: IProps) {
 
   return (
     <>
-      <canvas onClick={onClick} ref={canvas} width="650" height="350"/>
+      <canvas onClick={onClick} ref={canvas} width="650" height="350" />
     </>
   );
 }
