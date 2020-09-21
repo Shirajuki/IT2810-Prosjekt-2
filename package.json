@@ -42,7 +42,8 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
-    "@types/react-sound": "^1.2.2"
+    "@types/react-sound": "^1.2.2",
+    "jest-canvas-mock": "^2.2.0"
   },
   "repository": {
     "type": "git",
