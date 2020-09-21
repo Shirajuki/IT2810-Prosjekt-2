@@ -37,7 +37,7 @@ function setTheme(theme = "") {
 function App() {
   const [modal, setModal] = useState({
     title: "",
-    picture: "",
+
     sound: "",
   });
   return (
@@ -73,8 +73,8 @@ function App() {
                   onClick={() =>
                     setModal({
                       title: "In the Black Forest",
-                      picture: "./2.jpg",
-                      sound: "Kalimba.mp3",
+
+                      sound: "audiofiles/Kalimba.mp3",
                     })
                   }
                 ></BlackForest>
@@ -92,8 +92,8 @@ function App() {
                   onClick={() =>
                     setModal({
                       title: "The Birch-Tree at Loschwitz",
-                      picture: "./2.jpg",
-                      sound: "Kalimba.mp3",
+
+                      sound: "audiofiles/Kalimba.mp3",
                     })
                   }
                 ></Birch>
@@ -111,8 +111,7 @@ function App() {
                   onClick={() =>
                     setModal({
                       title: "A Wall Flower",
-                      picture: "./2.jpg",
-                      sound: "Kalimba.mp3",
+                      sound: "audiofiles/Kalimba.mp3",
                     })
                   }
                 ></WallFlower>
@@ -121,6 +120,24 @@ function App() {
                 <div className="poetryBox">
                   <h2 className="titlefont">A Wall Flower</h2>
                   <Poem title={"A Wall Flower"}></Poem>
+                </div>
+              </div>
+            </div>
+            <div className="art2">
+              <div>
+                <Snow
+                  onClick={() =>
+                    setModal({
+                      title: "Winter Song",
+                      sound: "audiofiles/Kalimba.mp3",
+                    })
+                  }
+                ></Snow>
+              </div>
+              <div>
+                <div className="poetryBox reversed">
+                  <h2 className="titlefont">Winter Song</h2>
+                  <Poem title={"Winter Song"}></Poem>
                 </div>
               </div>
             </div>
@@ -138,16 +155,12 @@ function App() {
           <div
             className="close-button"
             id="myBtn"
-            onClick={() => setModal({ title: "", picture: "", sound: "" })}
+            onClick={() => setModal({ title: "", sound: "" })}
           >
             <IoMdClose />
           </div>
 
-          <Installation
-            title={modal.title}
-            picture={modal.picture}
-            sound={modal.sound}
-          ></Installation>
+          <Installation title={modal.title} sound={modal.sound}></Installation>
         </div>
       </div>
 

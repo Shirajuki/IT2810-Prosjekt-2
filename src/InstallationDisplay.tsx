@@ -5,6 +5,8 @@ import Moon from "./canvas_installations/moon";
 import BlackForest from "./SVG_installations/BlackForest";
 import Birch from "./canvas_installations/birch";
 import WallFlower from "./canvas_installations/wallFlower";
+import Snow from "./canvas_installations/snow";
+import Test from "./SVG_installations/SVGtest";
 
 const Display = (props: { title: string; onClick?: () => void }) => {
   const project = () => {
@@ -17,6 +19,10 @@ const Display = (props: { title: string; onClick?: () => void }) => {
         return <Birch onClick={props.onClick}></Birch>;
       case "The Moon, how definite its orb! (fragment)":
         return <Moon onClick={props.onClick}></Moon>;
+      case "Winter Song":
+        return <Snow onClick={props.onClick}></Snow>;
+      //case "Epitaph. on Mrs Corbet, Who Died of a Cancer in Her Breast.":
+      //  return <Test onClick={props.onClick}></Test>;
       default:
         return <h1>No project match</h1>;
     }

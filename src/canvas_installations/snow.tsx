@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import Poem from "../Poem";
 
-function Snow() {
+interface IProps {
+  onClick: () => void;
+}
+function Snow({ onClick }: IProps) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const [ctx, setCtx] = useState(null);
   const interval = useRef(null);
@@ -104,7 +107,7 @@ function Snow() {
 
   return (
     <>
-      <canvas ref={canvas} width="650" height="350" />
+      <canvas onClick={onClick} ref={canvas} width="650" height="350" />
     </>
   );
 }
