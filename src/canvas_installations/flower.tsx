@@ -1,15 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import Poem from "../Poem";
+import SadFace from "./pngegg.png"
 
 function Flower() {
     const canvas = useRef<HTMLCanvasElement>(null);
     const [ctx, setCtx] = useState(null);
-    let pedal1 = 0;
-    let pedal2 = 0;
-    let pedal3 = 0;
-    let pedal4 = 0;
-    let pedal5 = 0;
-    let flowerCenter = 0;
+  
+    let pedal1 = useRef(0);
+    let pedal2 = useRef(0);
+    let pedal3 = useRef(0);
+    let pedal4 = useRef(0);
+    let pedal5 = useRef(0);
+    let flowerCenter = useRef(0);
+
+    const IntervalPedal = useRef(null);
+
+    let imgSadFace = useRef(null);
 
   
     useEffect(() => {
@@ -80,7 +86,7 @@ function Flower() {
 
       //Flower petals
       ctx.beginPath();
-      ctx.arc(340, pedal1+190, 30, 0, Math.PI * 2)
+      ctx.arc(340, pedal1.current +190, 30, 0, Math.PI * 2)
       ctx.strokeStyle = "transparent";
       ctx.stroke();
       ctx.fillStyle = `rgb(255,204,229)`;
@@ -88,7 +94,7 @@ function Flower() {
       ctx.closePath();
 
       ctx.beginPath();
-      ctx.arc(355, pedal2+160, 30, 0, Math.PI * 2)
+      ctx.arc(355, pedal2.current +160, 30, 0, Math.PI * 2)
       ctx.strokeStyle = "transparent";
       ctx.stroke();
       ctx.fillStyle = `rgb(255,204,229)`;
@@ -96,7 +102,7 @@ function Flower() {
       ctx.closePath();
 
       ctx.beginPath();
-      ctx.arc(400, pedal3+165, 30, 0, Math.PI * 2)
+      ctx.arc(400, pedal3.current +165, 30, 0, Math.PI * 2)
       ctx.strokeStyle = "transparent";
       ctx.stroke();
       ctx.fillStyle = `rgb(255,204,229)`;
@@ -104,7 +110,7 @@ function Flower() {
       ctx.closePath();
 
       ctx.beginPath();
-      ctx.arc(370, pedal4+215, 30, 0, Math.PI * 2)
+      ctx.arc(370, pedal4.current +215, 30, 0, Math.PI * 2)
       ctx.strokeStyle = "transparent";
       ctx.stroke();
       ctx.fillStyle = `rgb(255,204,229)`;
@@ -112,7 +118,7 @@ function Flower() {
       ctx.closePath();
 
       ctx.beginPath();
-      ctx.arc(405, pedal5+200, 30, 0, Math.PI * 2)
+      ctx.arc(405, pedal5.current +200, 30, 0, Math.PI * 2)
       ctx.strokeStyle = "transparent";
       ctx.stroke();
       ctx.fillStyle = `rgb(255,204,229)`;
@@ -121,7 +127,7 @@ function Flower() {
 
       //Flower center
       ctx.beginPath();
-      ctx.arc(375, flowerCenter + 190, 20, 0, Math.PI * 2)
+      ctx.arc(375, flowerCenter.current + 190, 20, 0, Math.PI * 2)
       ctx.strokeStyle = "transparent";
       ctx.stroke();
       ctx.fillStyle = `rgb(255,255,153)`;
@@ -130,8 +136,48 @@ function Flower() {
     };
   
     useEffect(() => {
-      if (ctx) draw(ctx);
-    }, [ctx]);
+      if (ctx){
+        
+        IntervalPedal.current = setInterval(()=>{
+          if (pedal1.current < 255){
+              pedal1.current += 1;
+              ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height);
+          }
+          else if(pedal2.current < 265){
+              pedal2.current += 1;
+              ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height);
+          }
+          else if(pedal3.current < 275){
+              pedal3.current += 1;
+              ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height);
+          }
+          else if (pedal4.current < 275){
+              pedal4.current += 1;
+              ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height);
+          }
+          else if (pedal5.current < 245){
+              pedal5.current += 1;
+              ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height);
+          }
+          else if (flowerCenter.current < 275){
+              flowerCenter.current += 1;
+              imgSadFace.current = new Image();
+              imgSadFace.current.src = {SadFace};
+              imgSadFace.current.onload = function () {
+                  ctx.drawImage(imgSadFace, 355, 170, 40, 40);
+              }
+              ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height);
+          }
+          else{
+              pedal1.current = 0;
+              pedal2.current = 0;
+              pedal3.current = 0;
+              pedal4.current = 0;
+              pedal5.current = 0;
+              flowerCenter.current = 0;
+          }
+        draw(ctx)})
+      }}, [ctx]);
   
     return (
       <>

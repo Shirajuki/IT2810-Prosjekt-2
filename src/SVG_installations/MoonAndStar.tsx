@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Poem from "../Poem";
 
-function SVGMoonAndStar() {
+function MoonAndStar() {
     return (
       <div className="App">
         <div className="App-header"></div>
@@ -81,5 +81,5 @@ function SVGMoonAndStar() {
     );
   }
   
-  export default SVGMoonAndStar;
+  export default MoonAndStar;
   
