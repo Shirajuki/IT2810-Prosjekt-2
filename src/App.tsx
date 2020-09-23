@@ -4,17 +4,10 @@ import Installation from "./Installation";
 import { IoMdClose } from "react-icons/io";
 import Poem from "./Poem";
 import Slideshow from "./Slideshow";
-import Test from "./SVG_installations/SVGtest";
-import Moon from "./canvas_installations/moon";
-import Snow from "./canvas_installations/snow";
-
-import BlackForest from "./SVG_installations/BlackForest";
-import Birch from "./canvas_installations/birch";
-import WallFlower from "./canvas_installations/wallFlower";
 import InstallationDisplay from "./InstallationDisplay"
-var background = "";
-var header = "";
-var hover = "";
+var background: string;
+var header: string;
+var hover: string;
 
 function setTheme(theme = "") {
 	if (theme === "black") {
@@ -162,7 +155,6 @@ function App() {
 			</div>
 
 			<footer>
-				<p>this is a footer</p>
 			</footer>
 		</>
 	);
