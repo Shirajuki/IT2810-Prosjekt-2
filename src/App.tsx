@@ -73,7 +73,6 @@ function App() {
                   onClick={() =>
                     setModal({
                       title: "In the Black Forest",
-
                       sound: "audiofiles/Kalimba.mp3",
                     })
                   }

@@ -28,11 +28,7 @@ class Slide extends Component<SlideshowProps,SlideshowState> {
 		return (
 			<div className="Slideshow">
 				<Display count={this.state.count} slides={this.props.slides} setSlide={this.setSlide.bind(this)} changeSlide={this.changeSlide.bind(this)}/>
-				<div className="bigPoetry">
-					<div className="poetryBox">
-						<Poem title={this.props.slides[this.state.count].title} />
-					</div>
-				</div>
+				
 			</div>
 		);
 	}
