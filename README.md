@@ -3,7 +3,6 @@
 
 
 # Solution on the webpage as a whole
-
 Chose to use 9 installations, where about half of them where programmed in SVG and the other in HTML canvas. There you could find different combinations of animation, sound and text, where the sound is from different audio files and the text is retrived dynamically from a poetry database. The site as a whole is parameterized, where a user can choose different themes for the page. This is a choice that is saved so that the page will open with this preference. Since the page contains nine different installations, a user can choose three favorite ones that are displayed on top of the page and can be viewed in a slideshow format. This is a choice that was made to make the webpage intuitive and sensible. By doing so a user can easily access their favorites, while still having the possibility to view alle the artworks with a scroll of a page.
 
 ## Technology that was used in the process
@@ -32,4 +31,4 @@ The testing for this project was done using Jest. Jest is a JavaScript testing f
 
 ### Node.js and NPM, Git and coding
 
-In the start phase of this project it was decided that we would download Node.js to our own computers instead of using GitPod. By doing this we based our project on Node Package Manager (NPM) to get things running. We used the package _npx create-react-app appnavn --template_ typescript to create a project with the initial configurations. To track project development, we used issues and milestones in gitlab. This helped keep the programmers on track so that the project was completed on time.
+In the start phase of this project it was decided that we would download Node.js to our own computers instead of using GitPod. By doing this we based our project on Node Package Manager (NPM) to get things running. We used the package *_npx create-react-app appnavn --template_* typescript to create a project with the initial configurations. To track project development, we used issues and milestones in gitlab. This helped keep the programmers on track so that the project was completed on time.
