@@ -4,16 +4,10 @@ import Installation from "./Installation";
 import { IoMdClose } from "react-icons/io";
 import Poem from "./Poem";
 import Slideshow from "./Slideshow";
-import Test from "./SVG_installations/SVGtest";
-import Moon from "./canvas_installations/moon";
-import Snow from "./canvas_installations/snow";
-
-import BlackForest from "./SVG_installations/BlackForest";
-import Birch from "./canvas_installations/birch";
-import WallFlower from "./canvas_installations/wallFlower";
-var background = "";
-var header = "";
-var hover = "";
+import InstallationDisplay from "./InstallationDisplay";
+var background: string;
+var header: string;
+var hover: string;
 
 function setTheme(theme = "") {
   if (theme === "black") {
@@ -37,7 +31,6 @@ function setTheme(theme = "") {
 function App() {
   const [modal, setModal] = useState({
     title: "",
-
     sound: "",
   });
   return (
@@ -69,14 +62,15 @@ function App() {
           <div className="artWrapper">
             <div className="art1">
               <div>
-                <BlackForest
+                <InstallationDisplay
+                  title="In the Black Forest"
                   onClick={() =>
                     setModal({
                       title: "In the Black Forest",
                       sound: "audiofiles/Kalimba.mp3",
                     })
                   }
-                ></BlackForest>
+                ></InstallationDisplay>
               </div>
               <div>
                 <div className="poetryBox">
@@ -87,15 +81,15 @@ function App() {
             </div>
             <div className="art2">
               <div>
-                <Birch
+                <InstallationDisplay
+                  title="The Birch-Tree at Loschwitz"
                   onClick={() =>
                     setModal({
                       title: "The Birch-Tree at Loschwitz",
-
                       sound: "audiofiles/Kalimba.mp3",
                     })
                   }
-                ></Birch>
+                ></InstallationDisplay>
               </div>
               <div>
                 <div className="poetryBox reversed">
@@ -106,14 +100,15 @@ function App() {
             </div>
             <div className="art3">
               <div>
-                <WallFlower
+                <InstallationDisplay
+                  title="A Wall Flower"
                   onClick={() =>
                     setModal({
                       title: "A Wall Flower",
                       sound: "audiofiles/Kalimba.mp3",
                     })
                   }
-                ></WallFlower>
+                ></InstallationDisplay>
               </div>
               <div>
                 <div className="poetryBox">
@@ -124,14 +119,15 @@ function App() {
             </div>
             <div className="art2">
               <div>
-                <Snow
+                <InstallationDisplay
+                  title="Winter Song"
                   onClick={() =>
                     setModal({
                       title: "Winter Song",
                       sound: "audiofiles/Kalimba.mp3",
                     })
                   }
-                ></Snow>
+                ></InstallationDisplay>
               </div>
               <div>
                 <div className="poetryBox reversed">
@@ -158,14 +154,11 @@ function App() {
           >
             <IoMdClose />
           </div>
-
           <Installation title={modal.title} sound={modal.sound}></Installation>
         </div>
       </div>
 
-      <footer>
-        <p>this is a footer</p>
-      </footer>
+      <footer></footer>
     </>
   );
 }
