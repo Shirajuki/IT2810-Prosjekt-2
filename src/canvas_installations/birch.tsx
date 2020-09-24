@@ -4,13 +4,34 @@ import Poem from "../Poem";
 interface IProps {
 	onClick: () => void;
 }
+type leafObject = {
+	"x": number,
+	"y": number,
+	"h": number,
+	"f": number,
+	"v": number,
+	"r": number,
+}
+type sunObject = {
+	"r": number,
+	"v": number,
+	"b": boolean
+}
 function Birch({onClick}: IProps) {
 	const canvas = useRef<HTMLCanvasElement>(null);
 	const [ctx, setCtx] = useState(null);
-
+	const leaves: leafObject[] = [];
+	const sun: sunObject = {"r": 110, "v": 0.25, "b": false}
 	useEffect(() => {
 		setCtx(canvas.current?.getContext("2d"));
 	}, [canvas]);
+	const drawLeaf = (ctx: CanvasRenderingContext2D, obj: leafObject) => {
+		ctx.beginPath();
+		ctx.fillStyle="#1a5234";
+		ctx.arc(obj.x,obj.y,obj.r,0,2*Math.PI,false)
+		ctx.fill()
+		ctx.closePath();
+	}
 	const drawPineTrees = (ctx: CanvasRenderingContext2D, x: number, y: number, sX?: number, sY?: number) => {
 		sX = sX || 1;
 		sY = sY || 1;
@@ -98,9 +119,20 @@ function Birch({onClick}: IProps) {
 		ctx.fill();
 		ctx.closePath();
 		// Sun
+		if (sun.b) {
+			sun.r += sun.v;
+			if (sun.r > 130) {
+				sun.b = false;
+			}
+		} else {
+			sun.r -= sun.v
+			if (sun.r < 110) {
+				sun.b = true;
+			}
+		}
 		ctx.beginPath();
 		ctx.fillStyle = "#fffcc9";
-		ctx.arc(180,130,110,0,2*Math.PI);
+		ctx.arc(180,130,sun.r,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
@@ -277,9 +309,24 @@ function Birch({onClick}: IProps) {
 		drawPineTrees(ctx,400,200,1.7,1.7);
 		drawPineTrees(ctx,320,210,2,2);
 		drawPineTrees(ctx,340,215,2.1,2.1);
+		for (let i=0; i<leaves.length; i++) {
+			const l = leaves[i];
+			drawLeaf(ctx,l);
+			l.x -= l.v;
+			l.y = 400+l.h*Math.sin(l.x/l.f);
+			if (l.x < 0) l.x = 760;
+		}
+		requestAnimationFrame(() => draw(ctx));
 	};
 
 	useEffect(() => {
+		leaves.push({"x": 750, "y": 420, "h": 17, "f": 35, "v": 5, "r": 10});
+		leaves.push({"x": 800, "y": 423, "h": 20, "f": 55, "v": 7, "r": 13});
+		leaves.push({"x": 850, "y": 425, "h": 10, "f": 45, "v": 6, "r": 7});
+		leaves.push({"x": 760, "y": 427, "h": 5, "f": 45, "v": 9, "r": 9});
+		leaves.push({"x": 900, "y": 430, "h": 17, "f": 65, "v": 9, "r": 12});
+		leaves.push({"x": 750, "y": 410, "h": 17, "f": 65, "v": 8, "r": 12});
+		leaves.push({"x": 940, "y": 415, "h": 20, "f": 65, "v": 4, "r": 10});
 		if (ctx) draw(ctx);
 	}, [ctx]);
 
