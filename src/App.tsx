@@ -198,7 +198,7 @@ function App() {
                   onClick={() =>
                     setModal({
                       title: "Ah, Moon -- and Star!",
-                      sound: "audiofiles/Kalimba.mp3",
+                      sound: "audiofiles/Crickets.mp3",
                     })
                   }
                 ></InstallationDisplay>
@@ -217,7 +217,7 @@ function App() {
                   onClick={() =>
                     setModal({
                       title: "Fragment: Home",
-                      sound: "audiofiles/Kalimba.mp3",
+                      sound: "audiofiles/SunnyDay.mp3",
                     })
                   }
                 ></InstallationDisplay>
@@ -236,7 +236,7 @@ function App() {
                   onClick={() =>
                     setModal({
                       title: "I hide myself within my flower,",
-                      sound: "audiofiles/Kalimba.mp3",
+                      sound: "audiofiles/SadSong.mp3",
                     })
                   }
                 ></InstallationDisplay>

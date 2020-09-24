@@ -71,11 +71,11 @@ function Home({ onClick }: IProps) {
           fill="black"
         >
           <animate
-            attributeName="cy"
-            from="300"
-            to="-100"
-            dur="3s"
-            begin="0s"
+            attributeName="x"
+            from="125"
+            to="100"
+            begin="2s"
+            dur="5s"
             repeatCount="indefinite"
           />
         </rect>
