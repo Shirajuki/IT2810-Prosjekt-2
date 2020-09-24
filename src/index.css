@@ -322,6 +322,7 @@ div.sectionsplit2 {
 .installation-wrapper canvas {
   max-width: 750px;
   margin: auto;
+  width: 100%;
 }
 .installation-wrapper svg {
   max-width: 750px;
@@ -475,5 +476,8 @@ footer {
     border-right: none;
     padding-right: 0;
     padding-left: 10px;
+  }
+  .installation-wrapper {
+    padding: 0;
   }
 }
