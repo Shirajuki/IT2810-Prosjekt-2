@@ -6,8 +6,12 @@ interface IProps {
 function Graveyard({ onClick }: IProps) {
   return (
     <div className="svg" onClick={onClick}>
-      <svg width="650" height="350" fill="lightblue">
-        <rect x="0" y="0" width="650" height="350" fill="lightblue"></rect>
+      <svg
+        viewBox="0 0 750 450"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="lightblue"
+      >
+        <rect x="0" y="0" width="750" height="350" fill="lightblue"></rect>
         <circle cx="450" cy="50" r="50" fill="yellow"></circle>
         <circle cx="450" cy="50" r="40" fill="orange"></circle>
         <polygon points="-50, 100 0, 50 75, 200 0, 200" fill="grey"></polygon>
@@ -55,6 +59,14 @@ function Graveyard({ onClick }: IProps) {
         ></polygon>
         <polygon
           points="600, 100 650, 50 725, 200 0, 200"
+          fill="grey"
+        ></polygon>
+        <polygon
+          points="650, 100 700, 50 775, 200 0, 200"
+          fill="grey"
+        ></polygon>
+        <polygon
+          points="700, 100 750, 50 825, 200 0, 200"
           fill="grey"
         ></polygon>
         <circle cx="100" cy="350" r="250" fill="lightgreen"></circle>

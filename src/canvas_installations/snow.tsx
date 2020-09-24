@@ -19,7 +19,7 @@ function Snow({ onClick }: IProps) {
     bgGradient.addColorStop(0, "#00f");
     bgGradient.addColorStop(1, "#606");
     ctx.fillStyle = bgGradient;
-    ctx.fillRect(0, 0, 650, 350);
+    ctx.fillRect(0, 0, 750, 350);
 
     ctx.beginPath();
     ctx.arc(180, 200, 80, 0, 2 * Math.PI, false);
@@ -32,7 +32,7 @@ function Snow({ onClick }: IProps) {
     groundGradient.addColorStop(0.25, "#ff0");
     groundGradient.addColorStop(1, "#666");
     ctx.fillStyle = groundGradient;
-    ctx.fillRect(0, 280, 650, 280);
+    ctx.fillRect(0, 280, 750, 280);
 
     ctx.beginPath();
     ctx.moveTo(150, 280);
@@ -73,20 +73,32 @@ function Snow({ onClick }: IProps) {
     ctx.fill();
     ctx.closePath();
 
+    ctx.beginPath();
+    ctx.moveTo(600, 350);
+    ctx.lineTo(750, 150);
+    ctx.lineTo(900, 350);
+    ctx.lineTo(600, 350);
+    ctx.closePath();
+    rightHillGradient.addColorStop(0, "#ff0");
+    rightHillGradient.addColorStop(1, "#666");
+    ctx.fillStyle = rightHillGradient;
+    ctx.fill();
+    ctx.closePath();
+
     ctx.fillStyle = "white";
-    for (let rad = time * 5; rad <= time * 5 + 400; rad += 50) {
+    for (let rad = time * 5; rad <= time * 5 + 500; rad += 50) {
       ctx.beginPath();
-      for (let x = Math.sin(time) * 10; x < 700; x += 30) {
-        ctx.arc(x, rad % 400, 3, 0, 2 * Math.PI, false);
+      for (let x = Math.sin(time) * 10; x < 800; x += 30) {
+        ctx.arc(x, rad % 500, 3, 0, 2 * Math.PI, false);
         ctx.fill();
       }
       ctx.closePath();
     }
 
-    for (let rad = time * 5 + 25; rad <= time * 5 + 425; rad += 50) {
+    for (let rad = time * 5 + 25; rad <= time * 5 + 525; rad += 50) {
       ctx.beginPath();
-      for (let x = Math.sin(time) * -10; x < 700; x += 30) {
-        ctx.arc(x, rad % 400, 3, 0, 2 * Math.PI, false);
+      for (let x = Math.sin(time) * -10; x < 800; x += 30) {
+        ctx.arc(x, rad % 500, 3, 0, 2 * Math.PI, false);
         ctx.fill();
       }
       ctx.closePath();
@@ -107,7 +119,7 @@ function Snow({ onClick }: IProps) {
 
   return (
     <>
-      <canvas onClick={onClick} ref={canvas} width="650" height="350" />
+      <canvas onClick={onClick} ref={canvas} width="750" height="450" />
     </>
   );
 }

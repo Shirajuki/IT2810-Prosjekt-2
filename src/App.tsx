@@ -8,24 +8,34 @@ import InstallationDisplay from "./InstallationDisplay";
 var background: string;
 var header: string;
 var hover: string;
+var border: string;
+var text: string;
 
 function setTheme(theme = "") {
   if (theme === "black") {
     background = "#171717";
     header = "rgba(23, 23, 23, 0.9)";
     hover = "#101010";
+    border = "#445f8f";
+    text = "#fff";
   } else if (theme === "white") {
     background = "#FFF";
-    header = "rgba(200, 200, 200, 0.9)";
-    hover = "#101010";
+    header = "#aaa";
+    hover = "rgba(200, 200, 200, 0.9)";
+    border = "#000";
+    text = "000";
   } else if (theme === "pink") {
-    background = "pink";
-    header = "darkpink";
-    hover = "#101010";
+    background = "#fab8d5";
+    header = "#f897c0";
+    hover = "#f476ab";
+    border = "#b7d2e0";
+    text = "#fff";
   }
   document.documentElement.style.setProperty("--background-colors", background);
   document.documentElement.style.setProperty("--header-color", header);
   document.documentElement.style.setProperty("--hover-color", hover);
+  document.documentElement.style.setProperty("--border-color", border);
+  document.documentElement.style.setProperty("--text-color", text);
 }
 
 function App() {
@@ -214,7 +224,7 @@ function App() {
               </div>
               <div>
                 <div className="poetryBox reversed">
-                  <h2 className="titlefont">Fragment: Home</h2>
+                  <h2 className="titlefont">Home</h2>
                   <Poem title={"Fragment: Home"}></Poem>
                 </div>
               </div>
