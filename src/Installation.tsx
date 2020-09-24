@@ -17,7 +17,7 @@ function Installation({ title, sound }: IProps) {
         <div className="poem-container">
           <Poem title={title}></Poem>
         </div>
-        {/* <audio id="my_audio" src={sound} autoPlay loop></audio>*/}
+        <audio id="my_audio" src={sound} autoPlay loop></audio>
       </div>
     </>
   );

@@ -134,7 +134,7 @@ function App() {
                   onClick={() =>
                     setModal({
                       title: "Winter Song",
-                      sound: "audiofiles/Kalimba.mp3",
+                      sound: "audiofiles/Winter_Wonderland.mp3",
                     })
                   }
                 ></InstallationDisplay>

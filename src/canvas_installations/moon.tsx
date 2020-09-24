@@ -262,7 +262,7 @@ function Moon({ onClick }: IProps) {
     ctx.closePath();
 
     ctx.beginPath();
-    ctx.fillStyle = "green";
+    ctx.fillStyle = "red";
     ctx.moveTo(505, 275);
     ctx.lineTo(565, 275);
     ctx.lineTo(535, 245);
