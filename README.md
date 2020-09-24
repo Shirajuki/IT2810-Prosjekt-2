@@ -3,7 +3,7 @@
 
 
 # Solution on the webpage as a whole
-Chose to use 9 installations, where about half of them where programmed in SVG and the other in HTML canvas. There you could find different combinations of animation, sound and text, where the sound is from different audio files and the text is retrived dynamically from a poetry database. The site as a whole is parameterized, where a user can choose different themes for the page. This is a choice that is saved so that the page will open with this preference. Since the page contains nine different installations, a user can choose three favorite ones that are displayed on top of the page and can be viewed in a slideshow format. This is a choice that was made to make the webpage intuitive and sensible. By doing so a user can easily access their favorites, while still having the possibility to view alle the artworks with a scroll of a page.
+Chose to use 9 installations, where about half of them where programmed in SVG and the other in HTML canvas. There you could find different combinations of animation, sound and text, where the sound is from different audio files and the text is retrieved dynamically from a poetry database. The site as a whole is parameterized, where a user can choose different themes for the page. This is a choice that is saved so that the page will open with this preference. Since the page contains nine different installations, a user can choose three favorite ones that are displayed on top of the page and can be viewed in a slideshow format. This is a choice that was made to make the webpage intuitive and sensible. By doing so a user can easily access their favorites, while still having the possibility to view all the artworks with a scroll of a page.
 
 ## Technology that was used in the process
 
@@ -13,11 +13,11 @@ Our webpage is written in TypeScript which bases itself on react which is a Java
 
 ### AJAX
 
-As stated earlier, we used a premade poetry database to get the text for our artworks. This was done using AJAX. AJAX is a build in HTTP request object, this was used to receive data from the poetry serve while the page loading and already loaded. In the code there is a file called Poem that uses fetch, which is a method that logically fetches resources. Audio was implemented using the regular HTML audio tag with autoplay.
+As stated earlier, we used a pre-made poetry database to get the text for our artworks. This was done using AJAX. AJAX is a build in HTTP request object, this was used to receive data from the poetry serve while the page loading and already loaded. In the code there is a file called Poem that uses fetch, which is a method that logically fetches resources. Audio was implemented using the regular HTML audio tag with autoplay.
 
 ### HTML Web Storage
 
-On our webpage a user will see a favorite button when opening the different artworks, by pressing this it will use HTML web storage and save this option for a user on their browser. This is achieved by using local storage and session storge, by doing this, every user can have their own unique webpage that they can customize to a degree.
+On our webpage a user will see a favorite button when opening the different artworks, by pressing this it will use HTML web storage and save this option for a user on their browser. This is achieved by using local storage and session storage, by doing this, every user can have their own unique webpage that they can customize to a degree.
 
 ### Web design
 
@@ -31,4 +31,4 @@ The testing for this project was done using Jest. Jest is a JavaScript testing f
 
 ### Node.js and NPM, Git and coding
 
-In the start phase of this project it was decided that we would download Node.js to our own computers instead of using GitPod. By doing this we based our project on Node Package Manager (NPM) to get things running. We used the package *_npx create-react-app appnavn --template_* typescript to create a project with the initial configurations. To track project development, we used issues and milestones in gitlab. This helped keep the programmers on track so that the project was completed on time.
+In the start phase of this project it was decided that we would download Node.js to our own computers instead of using GitPod. By doing this we based our project on Node Package Manager (NPM) to get things running. We used the package *_npx create-react-app prosjekt-2 --template_* typescript to create a project with the initial configurations. To track project development, we used issues and milestones in GitLab. This helped keep the programmers on track so that the project was completed on time.

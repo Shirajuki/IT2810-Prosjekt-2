@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Poem from "../Poem";
 
 interface IProps {
-	onClick: () => void;
+  onClick: () => void;
 }
 function BlackForest({onClick}: IProps) {
 	return (

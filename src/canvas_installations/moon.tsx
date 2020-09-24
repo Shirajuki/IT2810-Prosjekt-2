@@ -24,7 +24,7 @@ function Moon({ onClick }: IProps) {
     ctx.fillStyle = nightgrd;
     ctx.fillRect(0, 0, 650, 350);
     //ctx.drawImage(pattern.current, 0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.rect(0, 0, 650, 350);
+    ctx.rect(0, 0, 750, 350);
     ctx.fill();
     ctx.closePath();
 
@@ -37,7 +37,7 @@ function Moon({ onClick }: IProps) {
     grd.addColorStop(0, "#007EC1");
     grd.addColorStop(1, "#012653");
     ctx.fillStyle = grd;
-    ctx.fillRect(0, 200, 650, 350);
+    ctx.fillRect(0, 200, 750, 350);
     ctx.closePath();
 
     ctx.beginPath();
@@ -93,7 +93,7 @@ function Moon({ onClick }: IProps) {
 
     ctx.beginPath();
     ctx.fillStyle = "darkgreen";
-    ctx.moveTo(0, 350);
+    ctx.moveTo(0, 370);
     ctx.lineTo(350, 350);
     ctx.lineTo(500, 350);
     ctx.lineTo(350, 350);
@@ -106,13 +106,13 @@ function Moon({ onClick }: IProps) {
 
     ctx.beginPath();
     ctx.fillStyle = "darkgreen";
-    ctx.moveTo(650, 350);
+    ctx.moveTo(750, 370);
     ctx.lineTo(500, 350);
     ctx.lineTo(450, 300);
     ctx.lineTo(470, 270);
     ctx.lineTo(420, 220);
     ctx.lineTo(425, 200);
-    ctx.lineTo(650, 195);
+    ctx.lineTo(750, 195);
     ctx.fill();
     ctx.closePath();
 
@@ -263,9 +263,39 @@ function Moon({ onClick }: IProps) {
 
     ctx.beginPath();
     ctx.fillStyle = "green";
-    ctx.moveTo(505, 250);
-    ctx.lineTo(565, 250);
-    ctx.lineTo(535, 220);
+    ctx.moveTo(505, 275);
+    ctx.lineTo(565, 275);
+    ctx.lineTo(535, 245);
+    ctx.fill();
+    ctx.closePath();
+
+    //Tree4
+    ctx.beginPath();
+    ctx.fillStyle = "brown";
+    ctx.fillRect(670, 245, 20, 30);
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "green";
+    ctx.moveTo(630, 245);
+    ctx.lineTo(730, 245);
+    ctx.lineTo(680, 195);
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#38875E";
+    ctx.moveTo(640, 215);
+    ctx.lineTo(720, 215);
+    ctx.lineTo(680, 175);
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "green";
+    ctx.moveTo(650, 185);
+    ctx.lineTo(710, 185);
+    ctx.lineTo(680, 155);
     ctx.fill();
     ctx.closePath();
   };
@@ -276,7 +306,7 @@ function Moon({ onClick }: IProps) {
 
   return (
     <>
-      <canvas onClick={onClick} ref={canvas} width="650" height="350" />
+      <canvas onClick={onClick} ref={canvas} width="750" height="450" />
     </>
   );
 }
