@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Poem from "../Poem";
 import SadFace from "./pngegg.png";
 
 interface IProps {
@@ -161,7 +160,7 @@ function Flower({ onClick }: IProps) {
           imgSadFace.current = new Image();
           imgSadFace.current.src = { SadFace };
           imgSadFace.current.onload = function () {
-            ctx.drawImage(imgSadFace, 355, 170, 40, 40);
+            ctx.drawImage(imgSadFace.current, 355, 170, 40, 40);
           };
           ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         } else {
