@@ -346,7 +346,7 @@ div.sectionsplit2 {
   border-left: 7px solid var(--border-color);
   padding-left: 10px;
 }
-.poetryBox.reversed {
+.art2 .poetryBox {
   border-right: 7px solid #445f8f;
   border-left: none;
   padding-left: 0;
@@ -471,7 +471,7 @@ footer {
   .poetryBox {
     width: 100%;
   }
-  .poetryBox.reversed {
+  .art2 .poetryBox {
     border-left: 7px solid var(--border-color);
     border-right: none;
     padding-right: 0;

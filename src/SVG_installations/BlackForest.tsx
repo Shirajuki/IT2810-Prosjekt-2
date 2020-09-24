@@ -42,25 +42,25 @@ function BlackForest({onClick}: IProps) {
 					<circle cy="-10" cx="-10" r="7" fill="#ffffff">
 						<animate id="o1"
 							attributeName="cy"
-							values="0;100;100;100;100;100"
+							values="0;150;150;150;150;150"
 							dur="8s"
 							begin="3s;o1.end+3s"
 							repeatCount="indefinite"/>
 						<animate
 							attributeName="cx"
-							values="0;500;500;500;500;500"
+							values="0;600;600;600;600;600"
 							dur="8s"
 							begin="3s;o1.end+3s"
 							repeatCount="indefinite"/>
 					</circle>
 				</g>
-				<g>
+				<g opacity="1">
 					<path d="M -10 170 l 60 -80 l 40 50 l 30 -40 l 30 50 l 30 -30 l 30 60 l 40 -30 l 60 20 l 60 -50 l 100 30 l 100 -30 l 50 30 l 50 -50 l 50 50 l 20 -40 l 40 60 v 100 h -900 z" fill="#6a5082"/>
 					<path d="M -30 220 l 70 -80 l 50 50 l 40 -40 l 30 50 l 30 -30 l 30 60 l 40 -30 l 60 20 l 60 -50 l 100 30 l 90 -30 l 50 30 l 40 -50 l 30 50 l 30 -40 l 40 60 l 30 -40 v 150 h -900 z" fill="#5e3684"/>
 					<rect fill="#183a23" x="-10" y="280" width="770" height="220"/>
 					<rect x="0" y="230" width="750" height="60" fill="url(#tree)"/>
 				</g>
-				<g>
+				<g id="tree">
 					<ellipse ry="40" rx="140" cy="430" cx="500" fill="#1a4227"/>
 					<ellipse ry="30" rx="145" cy="330" cx="675" fill="#1a4227"/>
 					<ellipse ry="45" rx="150" cy="370" cx="40" fill="#1a4227"/>
