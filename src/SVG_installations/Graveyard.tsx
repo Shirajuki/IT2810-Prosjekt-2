@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
-import Poem from "../Poem";
 
-//Epitaph. on Mrs Corbet, Who Died of a Cancer in Her Breast.
-function Test() {
+interface IProps {
+  onClick: () => void;
+}
+function Graveyard({ onClick }: IProps) {
   return (
-    <div className="App">
+    <div className="svg" onClick={onClick}>
       <svg width="650" height="350" fill="lightblue">
         <rect x="0" y="0" width="650" height="350" fill="lightblue"></rect>
         <circle cx="450" cy="50" r="50" fill="yellow"></circle>
@@ -94,11 +94,8 @@ function Test() {
           RIP
         </text>
       </svg>
-      <Poem
-        title={"Epitaph. on Mrs Corbet, Who Died of a Cancer in Her Breast."}
-      ></Poem>
     </div>
   );
 }
 
-export default Test;
+export default Graveyard;
