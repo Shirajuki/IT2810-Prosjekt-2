@@ -136,6 +136,63 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className="art1">
+              <div>
+                <InstallationDisplay
+                  title="Fragment: Home"
+                  onClick={() =>
+                    setModal({
+                      title: "Fragment: Home",
+                      sound: "audiofiles/Kalimba.mp3",
+                    })
+                  }
+                ></InstallationDisplay>
+              </div>
+              <div>
+                <div className="poetryBox">
+                  <h2 className="titlefont">Fragment: Home</h2>
+                  <Poem title={"Fragment: Home"}></Poem>
+                </div>
+              </div>
+            </div>
+            <div className="art2">
+              <div>
+                <InstallationDisplay
+                  title="Ah, Moon -- and Star!"
+                  onClick={() =>
+                    setModal({
+                      title: "Ah, Moon -- and Star!",
+                      sound: "audiofiles/Kalimba.mp3",
+                    })
+                  }
+                ></InstallationDisplay>
+              </div>
+              <div>
+                <div className="poetryBox reversed">
+                  <h2 className="titlefont">Ah, Moon -- and Star!</h2>
+                  <Poem title={"Ah, Moon -- and Star!"}></Poem>
+                </div>
+              </div>
+            </div>
+            <div className="art1">
+              <div>
+                <InstallationDisplay
+                  title="I hide myself within my flower,"
+                  onClick={() =>
+                    setModal({
+                      title: "I hide myself within my flower,",
+                      sound: "audiofiles/Kalimba.mp3",
+                    })
+                  }
+                ></InstallationDisplay>
+              </div>
+              <div>
+                <div className="poetryBox">
+                  <h2 className="titlefont">I hide myself within my flower,</h2>
+                  <Poem title={"I hide myself within my flower,"}></Poem>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="sectionsplit"></div>
           <div id="root"></div>

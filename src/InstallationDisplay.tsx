@@ -7,6 +7,9 @@ import Birch from "./canvas_installations/birch";
 import WallFlower from "./canvas_installations/wallFlower";
 import Snow from "./canvas_installations/snow";
 import Test from "./SVG_installations/SVGtest";
+import Flower from "./canvas_installations/flower";
+import Home from "./SVG_installations/Home";
+import MoonAndStar from "./SVG_installations/MoonAndStar";
 
 const Display = (props: { title: string; onClick?: () => void }) => {
   const project = () => {
@@ -21,6 +24,12 @@ const Display = (props: { title: string; onClick?: () => void }) => {
         return <Moon onClick={props.onClick}></Moon>;
       case "Winter Song":
         return <Snow onClick={props.onClick}></Snow>;
+      case "I hide myself within my flower,":
+        return <Flower onClick={props.onClick}></Flower>;
+      case "Fragment: Home":
+        return <Home onClick={props.onClick}></Home>;
+      case "Ah, Moon -- and Star!":
+        return <MoonAndStar onClick={props.onClick}></MoonAndStar>;
       //case "Epitaph. on Mrs Corbet, Who Died of a Cancer in Her Breast.":
       //  return <Test onClick={props.onClick}></Test>;
       default:

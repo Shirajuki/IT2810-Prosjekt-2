@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import Poem from "../Poem";
 import SadFace from "./pngegg.png"
 
-function Flower() {
+interface IProps {
+  onClick: () => void;
+}
+
+function Flower({onClick}: IProps) {
     const canvas = useRef<HTMLCanvasElement>(null);
     const [ctx, setCtx] = useState(null);
   
@@ -164,7 +167,7 @@ function Flower() {
               imgSadFace.current = new Image();
               imgSadFace.current.src = {SadFace};
               imgSadFace.current.onload = function () {
-                  ctx.drawImage(imgSadFace, 355, 170, 40, 40);
+                  ctx.drawImage(imgSadFace.current, 355, 170, 40, 40);
               }
               ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height);
           }
@@ -181,8 +184,7 @@ function Flower() {
   
     return (
       <>
-        <canvas ref={canvas} width="750" height="450" />
-        <Poem title={"I hide myself within my flower,"}></Poem>
+        <canvas onClick={onClick} ref={canvas} width="750" height="450" />
       </>
     );
   }
