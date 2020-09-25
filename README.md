@@ -17,7 +17,7 @@ As stated earlier, we used a pre-made poetry database to get the text for our ar
 
 ### HTML Web Storage
 
-On our webpage a user will see a favorite button when opening the different artworks, by pressing this it will use HTML web storage and save this option for a user on their browser. This is achieved by using local storage and session storage, by doing this, every user can have their own unique webpage that they can customize to a degree.
+On our webpage a user will see a favorite button when opening the different artworks, by pressing this it will use HTML web storage and save this option for a user on their browser. This is achieved by using local storage, by doing this, every user can have their own unique webpage that they can customize to a degree. In each modal every user has the option to change the music. When the music is changed this information is stored in session storage, so as long as the webpage is open, this music choice will be saved. When the webpage is closed and opened again, the music will go back to the original sound.
 
 ### Web design
 
@@ -31,4 +31,4 @@ The testing for this project was done using Jest. Jest is a JavaScript testing f
 
 ### Node.js and NPM, Git and coding
 
-In the start phase of this project it was decided that we would download Node.js to our own computers instead of using GitPod. By doing this we based our project on Node Package Manager (NPM) to get things running. We used the package *_npx create-react-app prosjekt-2 --template_* typescript to create a project with the initial configurations. To track project development, we used issues and milestones in GitLab. This helped keep the programmers on track so that the project was completed on time.
+In the start phase of this project it was decided that we would download Node.js to our own computers instead of using GitPod. By doing this we based our project on Node Package Manager (NPM) to get things running. We used the package *_npx create-react-app prosjekt-2 --template_ typescript* to create a project with the initial configurations. To track project development, we used issues and milestones in GitLab. This helped keep the programmers on track so that the project was completed on time.
