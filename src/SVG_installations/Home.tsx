@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import wavingMan from "./wavingPerson.png";
 
 interface IProps {

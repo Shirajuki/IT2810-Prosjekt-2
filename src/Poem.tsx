@@ -9,7 +9,7 @@ function Poem({ title }: IProps) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log(prefixUrl + "/title/" + title + "/lines.json");
+    //console.log(prefixUrl + "/title/" + title + "/lines.json");
     fetch(prefixUrl + "/title/" + title + "/lines.json")
       .then((results) => results.json())
       .then((poem) => {

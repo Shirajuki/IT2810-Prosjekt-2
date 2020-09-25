@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Poem from "./Poem";
 import InstallationDisplay from "./InstallationDisplay";
 
 type slideType = {

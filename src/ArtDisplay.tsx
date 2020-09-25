@@ -1,17 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Poem from "./Poem";
 import "./App.css";
-import Moon from "./canvas_installations/moon";
-import BlackForest from "./SVG_installations/BlackForest";
-import Birch from "./canvas_installations/birch";
-import WallFlower from "./canvas_installations/wallFlower";
-import Snow from "./canvas_installations/snow";
-import Graveyard from "./SVG_installations/Graveyard";
-import MoonAndStar from "./SVG_installations/MoonAndStar";
-import Home from "./SVG_installations/Home";
-import Flower from "./canvas_installations/flower";
 import InstallationDisplay from "./InstallationDisplay";
-import Installation from "./Installation";
+
 const favourites: string[]  = [];
 const artList: string[] = [
 	"In the Black Forest",

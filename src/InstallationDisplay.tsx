@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Poem from "./Poem";
+import React from "react";
 import "./App.css";
 import Moon from "./canvas_installations/moon";
 import BlackForest from "./SVG_installations/BlackForest";

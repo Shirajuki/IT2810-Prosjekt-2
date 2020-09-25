@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Installation from "./Installation";
-import Poem from "./Poem";
 import Slideshow from "./Slideshow";
-import InstallationDisplay from "./InstallationDisplay";
 import ArtDisplay from "./ArtDisplay";
 import { IoMdClose } from "react-icons/io";
 //import {AsyncLocalStorage} from "async_hooks";
@@ -75,18 +73,21 @@ function setTheme(theme: string = "") {
     hover = "#101010";
     border = "#445f8f";
     text = "#fff";
+    sessionStorage.setItem(theme, "black");
   } else if (theme === "white") {
     background = "#FFF";
     header = "#aaa";
     hover = "rgba(200, 200, 200, 0.9)";
     border = "#000";
     text = "000";
+    sessionStorage.setItem(theme, "white");
   } else if (theme === "pink") {
     background = "#fab8d5";
     header = "#f897c0";
     hover = "#f476ab";
     border = "#b7d2e0";
     text = "#fff";
+    sessionStorage.setItem(theme, "pink");
   }
   document.documentElement.style.setProperty("--background-colors", background);
   document.documentElement.style.setProperty("--header-color", header);
@@ -123,8 +124,8 @@ function App() {
           <div className="sectionsplit"></div>
           <div className="sectionsplit"></div>
           <div className="tabBox">
-            <a href="#">Tab 1</a>
-            <a href="#">Tab 2</a>
+            <a href="#/">Tab 1</a>
+            <a href="#/">Tab 2</a>
           </div>
           <div className="artWrapper">
             <div className="art1">
