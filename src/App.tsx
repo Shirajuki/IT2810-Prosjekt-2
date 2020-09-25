@@ -24,6 +24,7 @@ const artList: string[] = [
   "Fragment: Home",
   "I hide myself within my flower,",
 ];
+
 if (typeof Storage !== "undefined") {
   if (
     localStorage.getItem("favourites") === null ||
@@ -121,10 +122,10 @@ function App() {
           <Slideshow />
           <div className="sectionsplit"></div>
           <div className="sectionsplit"></div>
-          {/* <div className="tabBox">
-			<a href="#">Tab 1</a>
-			<a href="#">Tab 2</a>
-		</div>  */}
+          <div className="tabBox">
+            <a href="#">Tab 1</a>
+            <a href="#">Tab 2</a>
+          </div>
           <div className="artWrapper">
             <div className="art1">
               <ArtDisplay
@@ -176,7 +177,7 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[4]}`,
-                    sound: "audiofiles/Kalimba.mp3",
+                    sound: "audiofiles/Swan-lake-music.mp3",
                   })
                 }
               />
