@@ -19,11 +19,11 @@ const getAudio = (title: string) => {
     case "Epitaph. on Mrs Corbet, Who Died of a Cancer in Her Breast.":
       return "audiofiles/Kalimba.mp3";
     case "Ah, Moon -- and Star!":
-      return "audiofiles/Kalimba.mp3";
+      return "audiofiles/Crickets.mp3";
     case "Fragment: Home":
-      return "audiofiles/Kalimba.mp3";
+      return "audiofiles/SunnyDay.mp3";
     case "I hide myself within my flower,":
-      return "audiofiles/Kalimba.mp3";
+      return "audiofiles/SadDay.mp3";
     default:
       return "";
   }
