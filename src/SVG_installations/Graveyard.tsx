@@ -12,8 +12,19 @@ function Graveyard({ onClick }: IProps) {
         fill="lightblue"
       >
         <rect x="0" y="0" width="750" height="350" fill="lightblue"></rect>
-        <circle cx="450" cy="50" r="50" fill="yellow"></circle>
-        <circle cx="450" cy="50" r="40" fill="orange"></circle>
+        <g className="sun">
+          <circle cx="450" cy="50" r="50" fill="yellow"></circle>
+          <circle cx="450" cy="50" r="40" fill="orange"></circle>
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            from="-300 0"
+            to="500 100"
+            dur="7s"
+            repeatCount="indefinite"
+          />
+        </g>
         <polygon points="-50, 100 0, 50 75, 200 0, 200" fill="grey"></polygon>
         <polygon points="0, 100 50, 50 125, 200 0, 200" fill="grey"></polygon>
         <polygon points="50, 100 100, 50 175, 200 0, 200" fill="grey"></polygon>

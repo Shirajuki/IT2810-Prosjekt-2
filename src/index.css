@@ -345,12 +345,14 @@ div.sectionsplit2 {
 .poetryBox {
   border-left: 7px solid var(--border-color);
   padding-left: 10px;
+  margin-left: 20px;
 }
 .art2 .poetryBox {
-  border-right: 7px solid #445f8f;
+  border-right: 7px solid var(--border-color);
   border-left: none;
   padding-left: 0;
   padding-right: 10px;
+  margin-right: 20px;
 }
 /* FOOTER **********************************************************/
 footer {
@@ -475,6 +477,7 @@ footer {
     border-left: 7px solid var(--border-color);
     border-right: none;
     padding-right: 0;
+    margin-right: 20px;
     padding-left: 10px;
   }
   .installation-wrapper {
