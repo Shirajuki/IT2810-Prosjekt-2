@@ -20,11 +20,11 @@ code {
     monospace;
 }
 .close-button {
-	cursor: pointer;
-	font-size: 2rem;
+  cursor: pointer;
+  font-size: 2rem;
 }
 .close-button:hover {
-	color: deeppink;
+  color: deeppink;
 }
 .modal-container {
   position: fixed; /* Stay in place */
@@ -39,7 +39,7 @@ code {
 }
 
 #modal-content {
-  background-color: #161616;
+  background-color: var(--background-colors);
   /* margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -49,6 +49,14 @@ code {
   top: 50%;
   transform: translate(-50%, calc(-50% + 25px));
   max-height: calc(100vh - 150px);
+}
+
+button {
+  background: transparent;
+  height: 48px;
+  width: 45px;
+  border: none;
+  color: white;
 }
 /* 
  ***********************************
