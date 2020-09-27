@@ -39,6 +39,7 @@ function toggleFavourite(title: string) {
 	} else {
 		addFavourite(title);
 	}
+	changeText(title);
 }
 function addFavourite(title: string) {
 	if (!favourites.includes(title)) {
@@ -54,6 +55,18 @@ function removeFavourite(title: string) {
 			break;
 		}
 	}
+}
+function changeText(title :string){
+	let button = document.getElementsByClassName("favourite")[0];
+
+    if (title in favourites) {
+		button.innerHTML = "&#11088;"
+		localStorage.setItem(button.innerHTML, "&#11088;")
+    }
+    else {
+		button.innerHTML = "&#9734;"
+		localStorage.setItem(button.innerHTML, "&#9734;")
+    }
 }
 function ArtDisplay(props: { title: string, setModal: () => void}) {
 	return (
