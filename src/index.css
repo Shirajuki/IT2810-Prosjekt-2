@@ -19,7 +19,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.close-button {
+	cursor: pointer;
+	font-size: 2rem;
+}
+.close-button:hover {
+	color: deeppink;
+}
 .modal-container {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */

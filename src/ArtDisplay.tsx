@@ -57,16 +57,7 @@ function removeFavourite(title: string) {
 	}
 }
 function changeText(title :string){
-	let button = document.getElementsByClassName("favourite")[0];
-
-    if (title in favourites) {
-		button.innerHTML = "&#11088;"
-		localStorage.setItem(button.innerHTML, "&#11088;")
-    }
-    else {
-		button.innerHTML = "&#9734;"
-		localStorage.setItem(button.innerHTML, "&#9734;")
-    }
+	document.getElementById(title).innerHTML = (favourites.includes(title)) ? "&#11088;" : "&#9734;";
 }
 function ArtDisplay(props: { title: string, setModal: () => void}) {
 	return (
@@ -78,7 +69,7 @@ function ArtDisplay(props: { title: string, setModal: () => void}) {
 						props.setModal()
 					}
 				></InstallationDisplay>
-				<button className="favourite" onClick={()=>toggleFavourite(`${props.title}`)}>&#9734;</button>
+				<button className="favourite" id={props.title} onClick={()=>toggleFavourite(`${props.title}`)}>&#9734;</button>
 			</div>
 			<div>
 				<div className="poetryBox reversed">
