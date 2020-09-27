@@ -8,6 +8,7 @@ interface IProps {
 function Moon({ onClick }: IProps) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const [ctx, setCtx] = useState(null);
+  var opacity = 0.5;
   var imgNightSky = new Image();
   imgNightSky.src = "unnamed.jpg";
 
@@ -47,6 +48,11 @@ function Moon({ onClick }: IProps) {
 
   const draw = (ctx: CanvasRenderingContext2D, time: number) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    if (opacity < 1) {
+      opacity += 0.05;
+    } else {
+      opacity = 0.1;
+    }
     ctx.beginPath();
     var nightgrd = ctx.createLinearGradient(0, 0, 650, 350);
     nightgrd.addColorStop(0, "#001431");
@@ -330,21 +336,21 @@ function Moon({ onClick }: IProps) {
     ctx.closePath();
 
     //Star
-    drawStar(50, 100);
-    drawStar(90, 150);
-    drawStar(90, 30);
-    drawStar(150, 70);
-    drawStar(250, 50);
-    drawStar(250, 150);
-    drawStar(300, 20);
-    drawStar(350, 180);
-    drawStar(400, 30);
-    drawStar(400, 120);
-    drawStar(500, 50);
-    drawStar(550, 150);
-    drawStar(600, 50);
-    drawStar(650, 150);
-    drawStar(680, 80);
+    drawStar(50, 100, opacity);
+    drawStar(90, 150, opacity);
+    drawStar(90, 30, opacity);
+    drawStar(150, 70, opacity);
+    drawStar(250, 50, opacity);
+    drawStar(250, 150, opacity);
+    drawStar(300, 20, opacity);
+    drawStar(350, 180, opacity);
+    drawStar(400, 30, opacity);
+    drawStar(400, 120, opacity);
+    drawStar(500, 50, opacity);
+    drawStar(550, 150, opacity);
+    drawStar(600, 50, opacity);
+    drawStar(650, 150, opacity);
+    drawStar(680, 80, opacity);
   };
 
   useEffect(() => {
@@ -355,7 +361,7 @@ function Moon({ onClick }: IProps) {
     interval.current = setInterval(() => {
       time.current += 0.1;
       draw(ctx, time.current);
-    }, 100);
+    }, 200);
   }, [ctx]);
 
   return (
