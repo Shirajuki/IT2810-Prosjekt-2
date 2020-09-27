@@ -66,7 +66,7 @@ function BlackForest({onClick}: IProps) {
 					<ellipse ry="45" rx="150" cy="370" cx="40" fill="#1a4227"/>
 					<ellipse ry="40" rx="190" cy="340" cx="375" fill="#0f2917"/>
 					<rect height="250" width="100" y="100" x="320" fill="brown"/>
-					<ellipse ry="25" rx="12" cy="235" cx="415" stroke="#a22121" fill="brown" stroke-width="4"/>
+					<ellipse ry="25" rx="12" cy="235" cx="415" stroke="#a22121" fill="brown" strokeWidth="4"/>
 					<path d="M 125 215 l 250 -230 l 250 230 z" fill="#183a23"/>
 					<path d="M 175 115 l 200 -230 l 200 230 z" fill="#183a23"/>
 				</g>

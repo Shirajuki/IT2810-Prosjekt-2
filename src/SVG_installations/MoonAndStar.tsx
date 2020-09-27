@@ -88,7 +88,7 @@ function MoonAndStar({ onClick }: IProps) {
           cy="480"
           r="160"
           stroke="rgb(110, 168, 94)"
-          stroke-width="4"
+          strokeWidth="4"
           fill="rgb(105,184,83)"
         />
         <circle
@@ -97,7 +97,7 @@ function MoonAndStar({ onClick }: IProps) {
           cy="470"
           r="160"
           stroke="rgb(52, 161, 103)"
-          stroke-width="3"
+          strokeWidth="3"
           fill="rgb(52,161,140)"
         />
         <circle
@@ -106,7 +106,7 @@ function MoonAndStar({ onClick }: IProps) {
           cy="490"
           r="170"
           stroke="rgb(111, 156, 87)"
-          stroke-width="4"
+          strokeWidth="4"
           fill="rgb(131,184,102)"
         />
 

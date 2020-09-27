@@ -50,6 +50,14 @@ code {
 	transform: translate(-50%, calc(-50% + 25px));
 	max-height: calc(100vh - 150px);
 }
+Star {
+  height: 20px;
+}
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 
 button {
 	cursor: pointer;
@@ -342,7 +350,6 @@ button {
 	.installation-wrapper svg {
 		max-width: 750px;
 	}
-
 	.svg {
 		text-align: center;
 	}

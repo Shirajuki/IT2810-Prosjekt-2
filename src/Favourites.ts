@@ -1,4 +1,3 @@
-const favourites: string[] = [];
 const artList: string[] = [
 	"In the Black Forest",
 	"A Wall Flower",
@@ -10,6 +9,24 @@ const artList: string[] = [
 	"Fragment: Home",
 	"I hide myself within my flower,",
 ];
+
+const arts: string[] = [];
+const favourites: string[] = artList.filter((title: string) =>
+	getFavoriteFromStorage(title)
+);
+function getFavoriteFromStorage(id: string): boolean {
+	try {
+		return localStorage.getItem("favourite-" + id) === "true";
+	} catch (ex) {
+		return false;
+	}
+}
+
+function setFavoriteInStorage(id: string, checked: boolean): void {
+	try {
+		localStorage.setItem("favourite-" + id, checked.toString());
+	} catch (ex) {}
+}
 
 if (typeof Storage !== "undefined") {
 	if (
@@ -23,7 +40,6 @@ if (typeof Storage !== "undefined") {
 		favourites.push(favStorage[i]);
 	}
 }
-const arts: string[] = [];
 for (let i = 0; i < favourites.length; i++) {
 	arts.push(favourites[i]);
 }
@@ -54,4 +70,11 @@ function removeFavourite(title: string) {
 		}
 	}
 }
-export default { "arts": arts, "favourites": favourites, "toggleFavourite": toggleFavourite}
+export default { 
+	"arts": arts,
+	"artList": artList,
+	"favourites": favourites,
+	"toggleFavourite": toggleFavourite,
+	"getFavoriteFromStorage": getFavoriteFromStorage,
+	"setFavoriteInStorage": setFavoriteInStorage,
+}
