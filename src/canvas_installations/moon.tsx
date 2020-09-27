@@ -15,7 +15,37 @@ function Moon({ onClick }: IProps) {
     setCtx(canvas.current?.getContext("2d"));
   }, [canvas]);
 
-  const draw = (ctx: CanvasRenderingContext2D) => {
+  const interval = useRef(null);
+  const time = useRef(0);
+
+  function drawStar(x = 0, y = 0, opacity = 0.5) {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(250, 250, 250, ${opacity})`;
+    ctx.fillRect(x - 10, y - 2.5, 20, 5);
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillRect(x - 2.5, y - 10, 5, 20);
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(x - 7.5, y - 5);
+    ctx.lineTo(x - 5, y - 7.5);
+    ctx.lineTo(x + 7.5, y + 5);
+    ctx.lineTo(x + 5, y + 7.5);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(x - 7.5, y + 5);
+    ctx.lineTo(x - 5, y + 7.5);
+    ctx.lineTo(x + 7.5, y - 5);
+    ctx.lineTo(x + 5, y - 7.5);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  const draw = (ctx: CanvasRenderingContext2D, time: number) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.beginPath();
     var nightgrd = ctx.createLinearGradient(0, 0, 650, 350);
@@ -262,10 +292,10 @@ function Moon({ onClick }: IProps) {
     ctx.closePath();
 
     ctx.beginPath();
-    ctx.fillStyle = "red";
-    ctx.moveTo(505, 275);
-    ctx.lineTo(565, 275);
-    ctx.lineTo(535, 245);
+    ctx.fillStyle = "green";
+    ctx.moveTo(505, 250);
+    ctx.lineTo(565, 250);
+    ctx.lineTo(535, 220);
     ctx.fill();
     ctx.closePath();
 
@@ -298,10 +328,34 @@ function Moon({ onClick }: IProps) {
     ctx.lineTo(680, 155);
     ctx.fill();
     ctx.closePath();
+
+    //Star
+    drawStar(50, 100);
+    drawStar(90, 150);
+    drawStar(90, 30);
+    drawStar(150, 70);
+    drawStar(250, 50);
+    drawStar(250, 150);
+    drawStar(300, 20);
+    drawStar(350, 180);
+    drawStar(400, 30);
+    drawStar(400, 120);
+    drawStar(500, 50);
+    drawStar(550, 150);
+    drawStar(600, 50);
+    drawStar(650, 150);
+    drawStar(680, 80);
   };
 
   useEffect(() => {
-    if (ctx) draw(ctx);
+    if (ctx)
+      if (interval.current !== null) {
+        clearInterval(interval.current);
+      }
+    interval.current = setInterval(() => {
+      time.current += 0.1;
+      draw(ctx, time.current);
+    }, 100);
   }, [ctx]);
 
   return (

@@ -44,28 +44,7 @@ for (let i = 0; i < artList.length; i++) {
     arts.push(artList[i]);
   }
 }
-function toggleFavourite(title: string) {
-  if (favourites.includes(title)) {
-    removeFavourite(title);
-  } else {
-    addFavourite(title);
-  }
-}
-function addFavourite(title: string) {
-  if (!favourites.includes(title)) {
-    favourites.push(title);
-    localStorage.setItem("favourites", JSON.stringify(favourites));
-  }
-}
-function removeFavourite(title: string) {
-  for (let i = 0; i < favourites.length; i++) {
-    if (favourites[i] === title) {
-      favourites.splice(i, 1);
-      localStorage.setItem("favourites", JSON.stringify(favourites));
-      break;
-    }
-  }
-}
+
 function setTheme(theme: string = "") {
   if (theme === "black") {
     background = "#171717";
