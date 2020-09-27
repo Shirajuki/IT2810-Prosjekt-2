@@ -65,7 +65,7 @@ function ArtDisplay(props: { title: string, setModal: () => void}) {
 						props.setModal()
 					}
 				></InstallationDisplay>
-				<button className="favourite" onClick={()=>toggleFavourite(`${props.title}`)}>*</button>
+				<button className="favourite" onClick={()=>toggleFavourite(`${props.title}`)}>&#9734;</button>
 			</div>
 			<div>
 				<div className="poetryBox reversed">
