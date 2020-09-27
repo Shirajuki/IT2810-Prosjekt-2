@@ -17,7 +17,8 @@ As stated earlier, we used a pre-made poetry database to get the text for our ar
 
 ### HTML Web Storage
 
-On our webpage a user will see a favorite button when opening the different artworks, by pressing this it will use HTML web storage and save this option for a user on their browser. This is achieved by using local storage, by doing this, every user can have their own unique webpage that they can customize to a degree. In each modal every user has the option to change the music. When the music is changed this information is stored in session storage, so as long as the webpage is open, this music choice will be saved. When the webpage is closed and opened again, the music will go back to the original sound.
+On our webpage a user will see a favorite button when opening the different artworks, by pressing this it will use HTML web storage and save this option for a user on their browser. This is achieved by using local storage, by doing this, every user can have their own unique webpage that they can customize to a degree. A user can change the theme of the webpage by pressing the different buttons with text in the top div bar. This will then be saved in a session storage, so that a user can refresh the page and keep the theme choice, but when the page is closed, the theme resets. 
+*In each modal every user has the option to change the music. When the music is changed this information is stored in session storage, so as long as the webpage is open, this music choice will be saved. When the webpage is closed and opened again, the music will go back to the original sound.*
 
 ### Web design
 
