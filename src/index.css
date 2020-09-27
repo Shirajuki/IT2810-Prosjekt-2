@@ -50,6 +50,14 @@ code {
   transform: translate(-50%, calc(-50% + 25px));
   max-height: calc(100vh - 150px);
 }
+Star {
+  height: 20px;
+}
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 
 button {
   background: transparent;
@@ -256,6 +264,24 @@ div.splash > div.active {
   color: #355684;
   background-color: rgba(240, 240, 240, 0.5);
 }
+
+.theme-button {
+  cursor: pointer;
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  width: 45px;
+  height: 50px;
+  padding: 10px;
+  background-color: var(--header-color);
+  box-shadow: inset 0 -2px 0 transparent, 0 2px 0 transparent;
+  transition: all 0.5s;
+}
+
+.theme-button:hover {
+  color: #355684;
+  background-color: var(--hover-color);
+}
 /* SPLITS **********************************************************/
 div.sectionsplit {
   height: 50px;
@@ -332,7 +358,9 @@ div.sectionsplit2 {
   max-height: calc(100vh - 250px);
   overflow-y: auto;
 }
-
+.canvas {
+  text-align: center;
+}
 .installation-wrapper canvas {
   max-width: 750px;
   margin: auto;

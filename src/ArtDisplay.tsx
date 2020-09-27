@@ -2,8 +2,10 @@ import React from "react";
 import Poem from "./Poem";
 import "./App.css";
 import InstallationDisplay from "./InstallationDisplay";
+import Star from "./Star";
 
-const favourites: string[] = [];
+/*
+//const favourites: string[] = [];
 const artList: string[] = [
   "In the Black Forest",
   "A Wall Flower",
@@ -64,6 +66,7 @@ function changeText(title: string) {
     ? "&#11088;"
     : "&#9734;";
 }
+*/
 function ArtDisplay(props: { title: string; setModal: () => void }) {
   return (
     <>
@@ -72,13 +75,14 @@ function ArtDisplay(props: { title: string; setModal: () => void }) {
           title={props.title}
           onClick={() => props.setModal()}
         ></InstallationDisplay>
-        <button
+        {/*<button
           className="favourite"
           id={props.title}
           onClick={() => toggleFavourite(`${props.title}`)}
         >
           {favourites.includes(props.title) ? "⭐" : "☆"}
-        </button>
+        </button>*/}
+        <Star id={props.title} />
       </div>
       <div>
         <div className="poetryBox reversed">

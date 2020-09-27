@@ -21,8 +21,8 @@ function Poem({ title }: IProps) {
 
   return (
     <div>
-      {data.map((item: string) => (
-        <p key={item}>{item}</p>
+      {data.map((item: string, index: number) => (
+        <p key={index}>{item}</p>
       ))}
     </div>
   );

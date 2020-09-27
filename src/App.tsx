@@ -3,13 +3,15 @@ import "./App.css";
 import Installation from "./Installation";
 import Slideshow from "./Slideshow";
 import ArtDisplay from "./ArtDisplay";
+import Star from "./Star";
+import { FavContext } from "./contexts";
 //import {AsyncLocalStorage} from "async_hooks";
 var background: string;
 var header: string;
 var hover: string;
 var border: string;
 var text: string;
-const favourites: string[] = [];
+
 const artList: string[] = [
   "In the Black Forest",
   "A Wall Flower",
@@ -22,19 +24,25 @@ const artList: string[] = [
   "I hide myself within my flower,",
 ];
 
-if (typeof Storage !== "undefined") {
-  if (
-    localStorage.getItem("favourites") === null ||
-    localStorage.getItem("favourites") === ""
-  ) {
-    localStorage.setItem("favourites", "[]");
-  }
-  const favStorage: string[] = JSON.parse(localStorage.getItem("favourites"));
-  for (let i = 0; i < favStorage.length; i++) {
-    favourites.push(favStorage[i]);
+function getFavoriteFromStorage(id: string): boolean {
+  try {
+    return localStorage.getItem("favourite-" + id) === "true";
+  } catch (ex) {
+    return false;
   }
 }
+
+function setFavoriteInStorage(id: string, checked: boolean): void {
+  try {
+    localStorage.setItem("favourite-" + id, checked.toString());
+  } catch (ex) {}
+}
+
 const arts: string[] = [];
+const favourites: string[] = artList.filter((title: string) =>
+  getFavoriteFromStorage(title)
+);
+
 for (let i = 0; i < favourites.length; i++) {
   arts.push(favourites[i]);
 }
@@ -79,13 +87,27 @@ function App() {
     title: "",
   });
 
-  console.log(sessionStorage.getItem("theme"));
   if (sessionStorage.getItem("theme") != null) {
     setTheme(sessionStorage.getItem("theme"));
   }
 
+  const [favorites, setFavorites] = useState(
+    artList.reduce(
+      (acc, title: string) => ({
+        ...acc,
+        [title]: getFavoriteFromStorage(title),
+      }),
+      {}
+    )
+  );
+
+  function setFavorite(id: string, checked: boolean) {
+    setFavorites((fs) => ({ ...fs, [id]: checked }));
+    setFavoriteInStorage(id, checked);
+  }
+
   return (
-    <>
+    <FavContext.Provider value={{ favorites, setFavorite }}>
       <div className="wrapper">
         <header>
           <div>
@@ -95,9 +117,21 @@ function App() {
               </a>
             </h1>
             <nav>
-              <button onClick={() => setTheme("black")}>Dark</button>
-              <button onClick={() => setTheme("white")}>Light</button>
-              <button onClick={() => setTheme("pink")}>Pink</button>
+              <button
+                className="theme-button"
+                onClick={() => setTheme("black")}
+              >
+                Dark
+              </button>
+              <button
+                className="theme-button"
+                onClick={() => setTheme("white")}
+              >
+                Light
+              </button>
+              <button className="theme-button" onClick={() => setTheme("pink")}>
+                Pink
+              </button>
             </nav>
           </div>
         </header>
@@ -212,18 +246,21 @@ function App() {
         style={modal.title !== "" ? { display: "block" } : { display: "none" }}
       >
         <div id="modal-content">
-          <div
-            className="close-button"
-            id="myBtn"
-            onClick={() => setModal({ title: "" })}
-          >
-            &#10006;
+          <div className="modal-header">
+            <div
+              className="close-button"
+              id="myBtn"
+              onClick={() => setModal({ title: "" })}
+            >
+              &#10006;
+            </div>
+            <Star id={modal.title} />
           </div>
           <Installation title={modal.title}></Installation>
         </div>
       </div>
       <footer></footer>
-    </>
+    </FavContext.Provider>
   );
 }
 export default App;
