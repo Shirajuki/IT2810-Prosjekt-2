@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import SadFace from "./pngegg.png";
 
 interface IProps {
   onClick: () => void;
@@ -17,8 +16,6 @@ function Flower({ onClick }: IProps) {
   let flowerCenter = useRef(0);
 
   const IntervalPedal = useRef(null);
-
-  let imgSadFace = useRef(null);
 
   useEffect(() => {
     setCtx(canvas.current?.getContext("2d"));
@@ -154,14 +151,6 @@ function Flower({ onClick }: IProps) {
           ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         } else if (pedal5.current < 245) {
           pedal5.current += 1;
-          ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        } else if (flowerCenter.current < 275) {
-          flowerCenter.current += 1;
-          imgSadFace.current = new Image();
-          imgSadFace.current.src = { SadFace };
-          imgSadFace.current.onload = function () {
-            ctx.drawImage(imgSadFace.current, 355, 170, 40, 40);
-          };
           ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         } else {
           pedal1.current = 0;
