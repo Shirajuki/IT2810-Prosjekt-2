@@ -77,7 +77,6 @@ function setTheme(theme: string = "") {
 function App() {
   const [modal, setModal] = useState({
     title: "",
-    sound: "",
   });
 
   setTheme(sessionStorage.getItem("theme"));
@@ -115,7 +114,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[0]}`,
-                    sound: "audiofiles/Kalimba.mp3",
                   })
                 }
               />
@@ -126,7 +124,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[1]}`,
-                    sound: "audiofiles/Kalimba.mp3",
                   })
                 }
               />
@@ -137,7 +134,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[2]}`,
-                    sound: "audiofiles/Kalimba.mp3",
                   })
                 }
               />
@@ -148,7 +144,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[3]}`,
-                    sound: "audiofiles/Winter_Wonderland.mp3",
                   })
                 }
               />
@@ -159,7 +154,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[4]}`,
-                    sound: "audiofiles/Swan-lake-music.mp3",
                   })
                 }
               />
@@ -170,7 +164,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[5]}`,
-                    sound: "audiofiles/Kalimba.mp3",
                   })
                 }
               />
@@ -181,7 +174,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[6]}`,
-                    sound: "audiofiles/Kalimba.mp3",
                   })
                 }
               />
@@ -192,7 +184,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[7]}`,
-                    sound: "audiofiles/Kalimba.mp3",
                   })
                 }
               />
@@ -203,7 +194,6 @@ function App() {
                 setModal={() =>
                   setModal({
                     title: `${arts[8]}`,
-                    sound: "audiofiles/Kalimba.mp3",
                   })
                 }
               />
@@ -222,11 +212,11 @@ function App() {
           <div
             className="close-button"
             id="myBtn"
-            onClick={() => setModal({ title: "", sound: "" })}
+            onClick={() => setModal({ title: "" })}
           >
             &#10006;
           </div>
-          <Installation title={modal.title} sound={modal.sound}></Installation>
+          <Installation title={modal.title}></Installation>
         </div>
       </div>
       <footer></footer>
