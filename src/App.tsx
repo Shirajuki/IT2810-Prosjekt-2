@@ -3,46 +3,13 @@ import "./App.css";
 import Installation from "./Installation";
 import Slideshow from "./Slideshow";
 import ArtDisplay from "./ArtDisplay";
+import Favourites from "./Favourites";
 //import {AsyncLocalStorage} from "async_hooks";
 var background: string;
 var header: string;
 var hover: string;
 var border: string;
 var text: string;
-const favourites: string[] = [];
-const artList: string[] = [
-	"In the Black Forest",
-	"A Wall Flower",
-	"The Birch-Tree at Loschwitz",
-	"Winter Song",
-	"The Moon, how definite its orb!",
-	"Epitaph. on Mrs Corbet, Who Died of a Cancer in Her Breast.",
-	"Ah, Moon -- and Star!",
-	"Fragment: Home",
-	"I hide myself within my flower,",
-];
-
-if (typeof Storage !== "undefined") {
-	if (
-		localStorage.getItem("favourites") === null ||
-		localStorage.getItem("favourites") === ""
-	) {
-		localStorage.setItem("favourites", "[]");
-	}
-	const favStorage: string[] = JSON.parse(localStorage.getItem("favourites"));
-	for (let i = 0; i < favStorage.length; i++) {
-		favourites.push(favStorage[i]);
-	}
-}
-const arts: string[] = [];
-for (let i = 0; i < favourites.length; i++) {
-	arts.push(favourites[i]);
-}
-for (let i = 0; i < artList.length; i++) {
-	if (!arts.includes(artList[i])) {
-		arts.push(artList[i]);
-	}
-}
 
 function setTheme(theme: string = "") {
 	if (theme === "black") {
@@ -89,9 +56,9 @@ function App() {
 							</a>
 						</h1>
 						<nav>
-							<a onClick={() => setTheme("black")}>Dark</a>
-							<a onClick={() => setTheme("white")}>Light</a>
-							<a onClick={() => setTheme("pink")}>Pink</a>
+							<button onClick={() => setTheme("black")}>Dark</button>
+							<button onClick={() => setTheme("white")}>Light</button>
+							<button onClick={() => setTheme("pink")}>Pink</button>
 						</nav>
 					</div>
 				</header>
@@ -101,96 +68,96 @@ function App() {
 					<div className="sectionsplit"></div>
 					<div className="sectionsplit"></div>
 					<div className="tabBox">
-						<a href="#/">Tab 1</a>
-						<a href="#/">Tab 2</a>
+						<button>Tab 1</button>
+						<button>Tab 2</button>
 					</div>
 					<div className="artWrapper">
 						<div className="art1">
 							<ArtDisplay
-								title={`${arts[0]}`}
+								title={`${Favourites.arts[0]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[0]}`,
+										title: `${Favourites.arts[0]}`,
 									})
 								}
 							/>
 						</div>
 						<div className="art2">
 							<ArtDisplay
-								title={`${arts[1]}`}
+								title={`${Favourites.arts[1]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[1]}`,
+										title: `${Favourites.arts[1]}`,
 									})
 								}
 							/>
 						</div>
 						<div className="art3">
 							<ArtDisplay
-								title={`${arts[2]}`}
+								title={`${Favourites.arts[2]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[2]}`,
+										title: `${Favourites.arts[2]}`,
 									})
 								}
 							/>
 						</div>
 						<div className="art2">
 							<ArtDisplay
-								title={`${arts[3]}`}
+								title={`${Favourites.arts[3]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[3]}`,
+										title: `${Favourites.arts[3]}`,
 									})
 								}
 							/>
 						</div>
 						<div className="art1">
 							<ArtDisplay
-								title={`${arts[4]}`}
+								title={`${Favourites.arts[4]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[4]}`,
+										title: `${Favourites.arts[4]}`,
 									})
 								}
 							/>
 						</div>
 						<div className="art2">
 							<ArtDisplay
-								title={`${arts[5]}`}
+								title={`${Favourites.arts[5]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[5]}`,
+										title: `${Favourites.arts[5]}`,
 									})
 								}
 							/>
 						</div>
 						<div className="art1">
 							<ArtDisplay
-								title={`${arts[6]}`}
+								title={`${Favourites.arts[6]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[6]}`,
+										title: `${Favourites.arts[6]}`,
 									})
 								}
 							/>
 						</div>
 						<div className="art2">
 							<ArtDisplay
-								title={`${arts[7]}`}
+								title={`${Favourites.arts[7]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[7]}`,
+										title: `${Favourites.arts[7]}`,
 									})
 								}
 							/>
 						</div>
 						<div className="art1">
 							<ArtDisplay
-								title={`${arts[8]}`}
+								title={`${Favourites.arts[8]}`}
 								setModal={() =>
 									setModal({
-										title: `${arts[8]}`,
+										title: `${Favourites.arts[8]}`,
 									})
 								}
 							/>

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import InstallationDisplay from "./InstallationDisplay";
-
+import Favourites from "./Favourites";
 type slideType = {
-	id: string,
-	image: string,
 	title: string;
 }
 interface SlideshowProps {
@@ -61,7 +59,7 @@ const Display = (props: {count: number, slides: slideType[], setSlide: (n: numbe
 			<div className="div5">
 				<InstallationDisplay title={props.slides[props.count].title}></InstallationDisplay>
 				<div className="btnWrapper">
-					<a className="button" onClick={() => props.changeSlide()}>>></a>
+					<button className="button" onClick={() => props.changeSlide()}>></button>
 				</div>
 			</div>
 		</div>
@@ -70,19 +68,13 @@ const Display = (props: {count: number, slides: slideType[], setSlide: (n: numbe
 }
 const slides: slideType[] = [
 	{
-		id: "slide1",
-		image: "https://via.placeholder.com/750x450?text=1",
-		title: "A Wall Flower",
+		title: Favourites.arts[0],
 	},
 	{
-		id: "slide2",
-		image: "https://via.placeholder.com/750x450?text=2",
-		title: "In the Black Forest",
+		title: Favourites.arts[1],
 	},
 	{
-		id: "slide3",
-		image: "https://via.placeholder.com/750x450?text=3",
-		title: "The Birch-Tree at Loschwitz",
+		title: Favourites.arts[2],
 	},
 ];
 function Slideshow() {
