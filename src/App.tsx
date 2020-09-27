@@ -79,7 +79,10 @@ function App() {
     title: "",
   });
 
-  setTheme(sessionStorage.getItem("theme"));
+  console.log(sessionStorage.getItem("theme"));
+  if (sessionStorage.getItem("theme") != null) {
+    setTheme(sessionStorage.getItem("theme"));
+  }
 
   return (
     <>
