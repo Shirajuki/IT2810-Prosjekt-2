@@ -13,222 +13,242 @@ var border: string;
 var text: string;
 
 function setTheme(theme: string = "") {
-	if (theme === "black") {
-		background = "#171717";
-		header = "rgba(23, 23, 23, 0.9)";
-		hover = "#101010";
-		border = "#445f8f";
-		text = "#fff";
-		sessionStorage.setItem("theme", "black");
-	} else if (theme === "white") {
-		background = "#FFF";
-		header = "#aaa";
-		hover = "rgba(200, 200, 200, 0.9)";
-		border = "#000";
-		text = "000";
-		sessionStorage.setItem("theme", "white");
-	} else if (theme === "pink") {
-		background = "#fab8d5";
-		header = "#f897c0";
-		hover = "#f476ab";
-		border = "#b7d2e0";
-		text = "#fff";
-		sessionStorage.setItem("theme", "pink");
-	}
-	document.documentElement.style.setProperty("--background-colors", background);
-	document.documentElement.style.setProperty("--header-color", header);
-	document.documentElement.style.setProperty("--hover-color", hover);
-	document.documentElement.style.setProperty("--border-color", border);
-	document.documentElement.style.setProperty("--text-color", text);
+  if (theme === "black") {
+    background = "#171717";
+    header = "rgba(23, 23, 23, 0.9)";
+    hover = "#101010";
+    border = "#445f8f";
+    text = "#fff";
+    sessionStorage.setItem("theme", "black");
+  } else if (theme === "white") {
+    background = "#FFF";
+    header = "#aaa";
+    hover = "rgba(200, 200, 200, 0.9)";
+    border = "#000";
+    text = "000";
+    sessionStorage.setItem("theme", "white");
+  } else if (theme === "pink") {
+    background = "#fab8d5";
+    header = "#f897c0";
+    hover = "#f476ab";
+    border = "#b7d2e0";
+    text = "#fff";
+    sessionStorage.setItem("theme", "pink");
+  }
+  document.documentElement.style.setProperty("--background-colors", background);
+  document.documentElement.style.setProperty("--header-color", header);
+  document.documentElement.style.setProperty("--hover-color", hover);
+  document.documentElement.style.setProperty("--border-color", border);
+  document.documentElement.style.setProperty("--text-color", text);
 }
 function App() {
-	const [modal, setModal] = useState({
-		title: "",
-		tab: "1",
-	});
+  const [modal, setModal] = useState({
+    title: "",
+    tab: "1",
+  });
 
-	if (sessionStorage.getItem("theme") != null) {
-		setTheme(sessionStorage.getItem("theme"));
-	}
+  if (sessionStorage.getItem("theme") != null) {
+    setTheme(sessionStorage.getItem("theme"));
+  }
 
-	const [favorites, setFavorites] = useState(
-		Favourites.artList.reduce(
-			(acc, title: string) => ({
-				...acc,
-				[title]: Favourites.getFavoriteFromStorage(title),
-			}),
-			{}
-		)
-	);
+  const [favorites, setFavorites] = useState(
+    Favourites.artList.reduce(
+      (acc, title: string) => ({
+        ...acc,
+        [title]: Favourites.getFavoriteFromStorage(title),
+      }),
+      {}
+    )
+  );
 
-	function setFavorite(id: string, checked: boolean) {
-		setFavorites((fs) => ({ ...fs, [id]: checked }));
-		Favourites.setFavoriteInStorage(id, checked);
-	}
-	const slideShowModal = (title:string) => {
-		setModal({ title: title, tab: modal.tab });
-	};
-	return (
-		<FavContext.Provider value={{ favorites, setFavorite }}>
-			<div className="wrapper">
-				<header>
-					<div>
-						<h1>
-							<a href="index.html" className="logo">
-								Kunst utstilling
-							</a>
-						</h1>
-						<nav>
-							<button className="theme-button" onClick={() => setTheme("black")}>
-								Dark
-							</button>
-							<button className="theme-button" onClick={() => setTheme("white")}>
-								Light
-							</button>
-							<button className="theme-button" onClick={() => setTheme("pink")}>
-								Pink
-							</button>
-						</nav>
-					</div>
-				</header>
-				<br />
-				<main>
-					<Slideshow setModal={slideShowModal}/>
-					<div className="sectionsplit"></div>
-					<div className="sectionsplit"></div>
-					<div className="tabBox">
-						<button onClick={() => setModal({ title: "", tab: "1" })}>Tab 1</button>
-						<button onClick={() => setModal({ title: "", tab: "2" })}>Tab 2</button>
-					</div>
-					<div className="artWrapper" style={modal.tab === "1" ? { display: "block" } : { display: "none" }}>
-						<div className="art1">
-							<ArtDisplay
-								title={`${Favourites.arts[0]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[0]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-						<div className="art2">
-							<ArtDisplay
-								title={`${Favourites.arts[1]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[1]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-						<div className="art3">
-							<ArtDisplay
-								title={`${Favourites.arts[2]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[2]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-						<div className="art2">
-							<ArtDisplay
-								title={`${Favourites.arts[3]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[3]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-						<div className="art1">
-							<ArtDisplay
-								title={`${Favourites.arts[4]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[4]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-
-					</div>
-					<div className="artWrapper" style={modal.tab === "2" ? { display: "block" } : { display: "none" }}>
-						<div className="art2">
-							<ArtDisplay
-								title={`${Favourites.arts[5]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[5]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-						<div className="art1">
-							<ArtDisplay
-								title={`${Favourites.arts[6]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[6]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-						<div className="art2">
-							<ArtDisplay
-								title={`${Favourites.arts[7]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[7]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-						<div className="art1">
-							<ArtDisplay
-								title={`${Favourites.arts[8]}`}
-								setModal={() =>
-									setModal({
-										title: `${Favourites.arts[8]}`,
-										tab: `${modal.tab}`,
-									})
-								}
-							/>
-						</div>
-					</div>
-					<div className="sectionsplit"></div>
-					<div id="root"></div>
-				</main>
-			</div>
-			<div className="sectionsplit2"></div>
-			<div
-				className="modal-container"
-				style={modal.title !== "" ? { display: "block" } : { display: "none" }}
-			>
-				<div id="modal-content">
-					<div className="modal-header">
-						<div
-							className="close-button"
-							id="myBtn"
-							onClick={() => setModal({ title: "", tab: `${modal.tab}` })}
-						>
-							&#10006;
-						</div>
-						<Star id={modal.title} />
-					</div>
-					<Installation title={modal.title}></Installation>
-				</div>
-			</div>
-			<footer></footer>
-		</FavContext.Provider>
-	);
+  function setFavorite(id: string, checked: boolean) {
+    setFavorites((fs) => ({ ...fs, [id]: checked }));
+    Favourites.setFavoriteInStorage(id, checked);
+  }
+  const slideShowModal = (title: string) => {
+    setModal({ title: title, tab: modal.tab });
+  };
+  return (
+    <FavContext.Provider value={{ favorites, setFavorite }}>
+      <div className="wrapper">
+        <header>
+          <div>
+            <h1>
+              <a href="index.html" className="logo">
+                Kunst utstilling
+              </a>
+            </h1>
+            <nav>
+              <button
+                className="theme-button"
+                onClick={() => setTheme("black")}
+              >
+                Dark
+              </button>
+              <button
+                className="theme-button"
+                onClick={() => setTheme("white")}
+              >
+                Light
+              </button>
+              <button className="theme-button" onClick={() => setTheme("pink")}>
+                Pink
+              </button>
+            </nav>
+          </div>
+        </header>
+        <br />
+        <main>
+          <Slideshow setModal={slideShowModal} />
+          <div className="sectionsplit"></div>
+          <div className="sectionsplit"></div>
+          <div className="tabBox">
+            <button onClick={() => setModal({ title: "", tab: "1" })}>
+              Tab 1
+            </button>
+            <button onClick={() => setModal({ title: "", tab: "2" })}>
+              Tab 2
+            </button>
+            <hr />
+          </div>
+          <div
+            className="artWrapper"
+            style={
+              modal.tab === "1" ? { display: "block" } : { display: "none" }
+            }
+          >
+            <div className="art1">
+              <ArtDisplay
+                title={`${Favourites.arts[0]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[0]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+            <div className="art2">
+              <ArtDisplay
+                title={`${Favourites.arts[1]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[1]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+            <div className="art3">
+              <ArtDisplay
+                title={`${Favourites.arts[2]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[2]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+            <div className="art2">
+              <ArtDisplay
+                title={`${Favourites.arts[3]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[3]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+            <div className="art1">
+              <ArtDisplay
+                title={`${Favourites.arts[4]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[4]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="artWrapper"
+            style={
+              modal.tab === "2" ? { display: "block" } : { display: "none" }
+            }
+          >
+            <div className="art2">
+              <ArtDisplay
+                title={`${Favourites.arts[5]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[5]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+            <div className="art1">
+              <ArtDisplay
+                title={`${Favourites.arts[6]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[6]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+            <div className="art2">
+              <ArtDisplay
+                title={`${Favourites.arts[7]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[7]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+            <div className="art1">
+              <ArtDisplay
+                title={`${Favourites.arts[8]}`}
+                setModal={() =>
+                  setModal({
+                    title: `${Favourites.arts[8]}`,
+                    tab: `${modal.tab}`,
+                  })
+                }
+              />
+            </div>
+          </div>
+          <div className="sectionsplit"></div>
+          <div id="root"></div>
+        </main>
+      </div>
+      <div className="sectionsplit2"></div>
+      <div
+        className="modal-container"
+        style={modal.title !== "" ? { display: "block" } : { display: "none" }}
+      >
+        <div id="modal-content">
+          <div className="modal-header">
+            <div
+              className="close-button"
+              id="myBtn"
+              onClick={() => setModal({ title: "", tab: `${modal.tab}` })}
+            >
+              &#10006;
+            </div>
+            <Star id={modal.title} />
+          </div>
+          <Installation title={modal.title}></Installation>
+        </div>
+      </div>
+      <footer></footer>
+    </FavContext.Provider>
+  );
 }
 export default App;
