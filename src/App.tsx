@@ -44,6 +44,7 @@ function setTheme(theme: string = "") {
 function App() {
 	const [modal, setModal] = useState({
 		title: "",
+		tab: "1",
 	});
 
 	if (sessionStorage.getItem("theme") != null) {
@@ -94,16 +95,17 @@ function App() {
 					<div className="sectionsplit"></div>
 					<div className="sectionsplit"></div>
 					<div className="tabBox">
-						<button>Tab 1</button>
-						<button>Tab 2</button>
+						<button onClick={() => setModal({ title: "", tab: "1" })}>Tab 1</button>
+						<button onClick={() => setModal({ title: "", tab: "2" })}>Tab 2</button>
 					</div>
-					<div className="artWrapper">
+					<div className="artWrapper" style={modal.tab === "1" ? { display: "block" } : { display: "none" }}>
 						<div className="art1">
 							<ArtDisplay
 								title={`${Favourites.arts[0]}`}
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[0]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
@@ -114,6 +116,7 @@ function App() {
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[1]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
@@ -124,6 +127,7 @@ function App() {
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[2]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
@@ -134,6 +138,7 @@ function App() {
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[3]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
@@ -144,16 +149,21 @@ function App() {
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[4]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
 						</div>
+
+					</div>
+					<div className="artWrapper" style={modal.tab === "2" ? { display: "block" } : { display: "none" }}>
 						<div className="art2">
 							<ArtDisplay
 								title={`${Favourites.arts[5]}`}
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[5]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
@@ -164,6 +174,7 @@ function App() {
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[6]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
@@ -174,6 +185,7 @@ function App() {
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[7]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
@@ -184,6 +196,7 @@ function App() {
 								setModal={() =>
 									setModal({
 										title: `${Favourites.arts[8]}`,
+										tab: `${modal.tab}`,
 									})
 								}
 							/>
@@ -203,7 +216,7 @@ function App() {
 						<div
 							className="close-button"
 							id="myBtn"
-							onClick={() => setModal({ title: "" })}
+							onClick={() => setModal({ title: "", tab: `${modal.tab}` })}
 						>
 							&#10006;
 						</div>
