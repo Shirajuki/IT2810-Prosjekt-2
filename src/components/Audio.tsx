@@ -6,7 +6,7 @@ interface IProps {
 const getAudio = (title: string) => {
   switch (title) {
     case "A Wall Flower":
-      return "audiofiles/wallFLower.mp3";
+      return "audiofiles/wallFlower.mp3";
     case "In the Black Forest":
       return "audiofiles/blackForest.mp3";
     case "The Birch-Tree at Loschwitz":
