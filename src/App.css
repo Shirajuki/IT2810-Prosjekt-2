@@ -1,0 +1,407 @@
+/* 
+ * SPLASH *********************************************************
+ */
+.titlefont,
+.title {
+	text-transform: uppercase;
+	font-family: "Lilita One", cursive;
+}
+main div.splash {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+div.splash > div {
+	position: relative;
+	min-height: 60px;
+}
+div.splash canvas,
+div.splash svg {
+	width: 100%;
+}
+.div1 {
+	grid-area: 1 / 1 / 2 / 3;
+}
+.div2 {
+	grid-area: 2 / 1 / 3 / 3;
+}
+.div3 {
+	grid-area: 3 / 1 / 4 / 3;
+}
+.div4 {
+	grid-area: 4 / 1 / 6 / 3;
+}
+.div4 > div {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	height: 100%;
+	background-color: var(--background-colors);
+	width: calc(100% + 10%);
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.div4 > div > h1.title {
+	font-size: 34pt;
+}
+.div5 {
+	grid-area: 1 / 3 / 6 / 7;
+}
+.div1,
+.div2,
+.div3 {
+	display: grid;
+	grid-template-columns: 33% 67%;
+	align-items: center;
+	grid-gap: 6px;
+	padding: 4px 0;
+	cursor: pointer;
+	transition: background-color 0.5s;
+}
+.div1:hover,
+.div2:hover,
+.div3:hover,
+div.splash > div.active {
+	background-color: var(--hover-color);
+}
+.div1 img,
+.div2 img,
+.div3 img {
+	width: 100%;
+}
+.div5 img {
+	width: 100%;
+	height: 100%;
+}
+/* 
+ * BUTTONS ********************************************************
+ */
+button {
+	cursor: pointer;
+	padding: 5px;
+	color: #fff;
+	text-decoration: none;
+	width: 40px;
+	padding: 10px;
+	background-color: var(--header-color);
+	box-shadow: inset 0 -2px 0 transparent, 0 2px 0 transparent;
+	transition: all 0.5s;
+}
+.splash .btnWrapper {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(10px, -50%);
+	width: 50px;
+	height: 50px;
+}
+.splash .button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 10;
+}
+.button:hover {
+	color: #355684;
+	background-color: rgba(240, 240, 240, 0.5);
+}
+button:hover {
+	background-color: var(--hover-color);
+}
+canvas,
+svg {
+	cursor: pointer;
+}
+/* 
+ * SPLITS *********************************************************
+ */
+div.sectionsplit {
+	height: 50px;
+}
+div.sectionsplit2 {
+	height: 10vh;
+	background-color: #dfdfdf;
+}
+.tab-line {
+	margin-top: 20px;
+	height: 3px;
+	border: none;
+	background-color: var(--button-color);
+}
+/* 
+ * ART ************************************************************
+ */
+.bigPoetry {
+	margin-top: 50px;
+}
+.tabBox button {
+	padding: 5px;
+	margin-right: 5px;
+	color: #fff;
+	text-decoration: none;
+	transition: background-color 0.5s;
+	background-color: var(--button-color);
+}
+.tabBox button:hover {
+	background-color: var(--hover-color);
+}
+
+.tabBox a:hover {
+	background-color: rgba(240, 240, 240, 0.3);
+}
+.artWrapper {
+	display: block;
+	overflow: hidden;
+}
+.artWrapper canvas,
+.artWrapper svg {
+	width: 100%;
+}
+.artWrapper > div {
+	display: grid;
+	/* flex-direction: row; */
+	grid-template-columns: 50% 50%;
+	margin: 50px 0;
+}
+.artWrapper > div > div {
+	width: 100%;
+	height: 380px;
+}
+.artWrapper > div > div:last-child {
+	display: flex;
+	flex-direction: center;
+	align-items: center;
+	justify-content: center;
+}
+.artWrapper > div > div p {
+	font-size: 0.8rem;
+}
+.artWrapper > div > div > img {
+	max-width: 100%;
+	height: 100%;
+}
+.artWrapper > .art2 > div:first-child {
+	order: 1;
+	text-align: right;
+}
+.artWrapper > .art2 > div:last-child {
+	order: 0;
+	text-align: right;
+}
+.InstallationWrapper {
+	position: relative;
+}
+.darkOverlay {
+	font-size: 5rem;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 2px);
+	cursor: pointer;
+	transition: color 0.5s;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+.darkOverlay:hover {
+	color: #445f8f;
+}
+/*
+ * INSTALLATION ***************************************************
+ */
+.installation-title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.installation-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: auto;
+	padding: 0 100px;
+	max-height: calc(100vh - 250px);
+	overflow-y: auto;
+}
+.installation-wrapper canvas {
+	max-width: 750px;
+	margin: auto;
+	width: 100%;
+}
+.installation-wrapper svg {
+	max-width: 750px;
+}
+.svg {
+	text-align: center;
+}
+.poem-container {
+	text-align: center;
+}
+.installation-image {
+	min-width: 650px;
+	height: 350px;
+}
+Star {
+	height: 20px;
+}
+.favourite {
+	position: absolute;
+	left: 0;
+	bottom: 2px;
+	font-size: 1.2rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+}
+.favourite:hover {
+	background-color: rgba(0, 0, 0, 0.95);
+}
+.modal-header .favourite {
+	background: transparent;
+}
+/* 
+ * POETRY *********************************************************
+ */
+.poetryBox {
+	border-left: 7px solid var(--border-color);
+	padding-left: 10px;
+	margin-left: 20px;
+}
+.art2 .poetryBox {
+	border-right: 7px solid var(--border-color);
+	border-left: none;
+	padding-left: 0;
+	padding-right: 10px;
+	margin-right: 20px;
+}
+/*
+ * MODAL **********************************************************
+ */
+.close-button {
+	cursor: pointer;
+	font-size: 2rem;
+}
+.close-button:hover {
+	color: deeppink;
+}
+.modal-container {
+	position: fixed; /* Stay in place */
+	z-index: 4; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+}
+#modal-content {
+	background-color: var(--background-colors);
+	/* margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, calc(-50% + 25px));
+	max-height: calc(100vh - 150px);
+}
+/*
+ * RESPONSIVE *****************************************************
+ */
+@media screen and (max-width: 800px) {
+	.div4 > div > h1.title {
+		font-size: 2rem;
+	}
+	main {
+		width: 90%;
+		margin-top: 5px;
+	}
+	main div.splash {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+	}
+	main div.splash {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-column-gap: 5px;
+	}
+	.div1 {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+	.div2 {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+	.div3 {
+		grid-area: 1 / 3 / 2 / 4;
+	}
+	.div4 {
+		grid-area: 4 / 1 / 5 / 4;
+	}
+	.div5 {
+		grid-area: 2 / 1 / 4 / 4;
+	}
+	.div1,
+	.div2,
+	.div3 {
+		display: flex;
+		flex-direction: column;
+		padding: 4px 0;
+		font-size: 0.7rem;
+	}
+	div.splash img {
+		max-width: 100%;
+	}
+	.div4 > div {
+		width: 100%;
+	}
+	.bigPoetry {
+		margin-top: 0;
+	}
+	.artWrapper > div:first-child {
+		margin-top: 20px;
+	}
+	.artWrapper > div {
+		display: flex;
+		flex-direction: column;
+	}
+	.artWrapper > div > div:first-child {
+		width: 100%;
+		height: auto;
+	}
+	.artWrapper > div > div:last-child {
+		margin-top: 10px;
+		height: auto;
+	}
+	.artWrapper > div > div p {
+		font-size: 0.74rem;
+	}
+	.artWrapper > div > div > img {
+		width: 100%;
+	}
+	.artWrapper > .art2 > div:first-child {
+		order: 0;
+	}
+	.artWrapper > .art2 > div:last-child {
+		order: 1;
+		text-align: left;
+	}
+	.poetryBox {
+		width: 100%;
+	}
+	.art2 .poetryBox {
+		border-left: 7px solid var(--border-color);
+		border-right: none;
+		padding-right: 0;
+		margin-right: 20px;
+		padding-left: 10px;
+	}
+	.installation-wrapper {
+		padding: 0;
+	}
+}
