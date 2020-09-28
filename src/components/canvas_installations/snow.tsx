@@ -17,11 +17,11 @@ function Snow({ onClick }: IProps) {
   let t = 0;
   function setTheme() {
     let theme: string = sessionStorage.getItem("theme");
-    if (theme == "black") {
+    if (theme === "black") {
       t = 0;
-    } else if (theme == "white") {
+    } else if (theme === "white") {
       t = 1;
-    } else if (theme == "pink") {
+    } else if (theme === "pink") {
       t = 2;
     }
   }

@@ -22,9 +22,9 @@ function Birch({onClick}: IProps) {
 	const leaves: leafObject[] = [];
 	const sun: sunObject = {"r": 110, "v": 0.25, "b": false}
 	const palettes = [
-		["brown"], // dark
-		["white"], // light
-		["deeppink"], // pink
+		["brown","#b879aa"], // dark
+		["white","#ffe0f8"], // light
+		["deeppink","#de3cba"], // pink
 	];
 	let t = 0;
 	function setTheme() {
@@ -94,7 +94,7 @@ function Birch({onClick}: IProps) {
 		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 		ctx.beginPath();
 		ctx.beginPath();
-		ctx.fillStyle = "#ffe0f8";
+		ctx.fillStyle = palettes[t][1];
 		ctx.fillRect(0,0,750,450);
 		ctx.closePath();
 		// Background
