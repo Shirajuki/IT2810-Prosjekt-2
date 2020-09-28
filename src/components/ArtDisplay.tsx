@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Poem from "./Poem";
 import InstallationDisplay from "./InstallationDisplay";
 import Star from "./Star";

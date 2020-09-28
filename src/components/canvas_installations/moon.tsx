@@ -366,7 +366,7 @@ function Moon({ onClick }: IProps) {
       time.current += 0.1;
       draw(ctx, time.current);
     }, 200);
-  }, [ctx]);
+  }, [ctx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

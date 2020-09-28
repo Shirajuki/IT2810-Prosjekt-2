@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 interface IProps {
-  onClick: () => void;
+	onClick: () => void;
 }
 type opacityObject = {
 	"s1": number[],
@@ -306,15 +306,15 @@ function WallFlower({onClick}: IProps) {
 		requestAnimationFrame(() => draw(ctx));
 	};
 
-  useEffect(() => {
-    if (ctx) draw(ctx);
-  }, [ctx]);
+	useEffect(() => {
+		if (ctx) draw(ctx);
+	}, [ctx]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return (
-    <>
-      <canvas onClick={onClick} ref={canvas} width="750" height="450" />
-    </>
-  );
+	return (
+		<>
+			<canvas onClick={onClick} ref={canvas} width="750" height="450" />
+		</>
+	);
 }
 
 export default WallFlower;

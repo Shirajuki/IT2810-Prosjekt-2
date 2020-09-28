@@ -327,7 +327,7 @@ function Birch({onClick}: IProps) {
 		leaves.push({"x": 750, "y": 410, "h": 17, "f": 65, "v": 8, "r": 12});
 		leaves.push({"x": 940, "y": 415, "h": 20, "f": 65, "v": 4, "r": 10});
 		if (ctx) draw(ctx);
-	}, [ctx]);
+	}, [ctx]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<>
