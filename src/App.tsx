@@ -109,6 +109,7 @@ function App() {
             <button onClick={() => setModal({ title: "", tab: "2" })}>
               Tab 2
             </button>
+            <hr className="tab-line" />
           </div>
           <div
             className="artWrapper"
