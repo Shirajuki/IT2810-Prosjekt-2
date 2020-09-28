@@ -10,24 +10,6 @@ const artList: string[] = [
 	"I hide myself within my flower,",
 ];
 
-const arts: string[] = [];
-const favourites: string[] = artList.filter((title: string) =>
-	getFavoriteFromStorage(title)
-);
-function getFavoriteFromStorage(id: string): boolean {
-	try {
-		return localStorage.getItem("favourite-" + id) === "true";
-	} catch (ex) {
-		return false;
-	}
-}
-
-function setFavoriteInStorage(id: string, checked: boolean): void {
-	try {
-		localStorage.setItem("favourite-" + id, checked.toString());
-	} catch (ex) {}
-}
-
 if (typeof Storage !== "undefined") {
 	if (
 		localStorage.getItem("favourites") === null ||
@@ -35,11 +17,32 @@ if (typeof Storage !== "undefined") {
 	) {
 		localStorage.setItem("favourites", "[]");
 	}
-	const favStorage: string[] = JSON.parse(localStorage.getItem("favourites"));
-	for (let i = 0; i < favStorage.length; i++) {
-		favourites.push(favStorage[i]);
+}
+const arts: string[] = [];
+const favourites: string[] = artList.filter((title: string) =>
+	getFavoriteFromStorage(title)
+);
+function getFavoriteFromStorage(title: string): boolean {
+	try {
+		const favStorage = JSON.parse(localStorage.getItem("favourites"));
+		return favStorage.includes(title);
+	} catch (ex) {
+		return false;
 	}
 }
+
+function setFavoriteInStorage(title: string, checked: boolean): void {
+	try {
+		if (checked) {
+			addFavourite(title);
+		} else {
+			if (favourites.includes(title)) {
+				removeFavourite(title);
+			} 
+		}
+	} catch (ex) {}
+}
+
 for (let i = 0; i < favourites.length; i++) {
 	arts.push(favourites[i]);
 }

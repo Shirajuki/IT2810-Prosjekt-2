@@ -30,7 +30,7 @@ code {
 .favourite {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 2px;
   font-size: 1.2rem;
   color: var(--text-color);
   background-color: rgba(0, 0, 0, 0.5);
@@ -455,14 +455,13 @@ footer {
     font-size: 2rem;
   }
   header {
-    /* position: fixed; */
+    position: relative;
     top: 0;
     z-index: 3;
     height: 70px;
   }
   header div {
     padding-top: 10px;
-    position: relative;
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
@@ -481,6 +480,7 @@ footer {
   }
   main {
     width: 90%;
+	margin-top: 5px;
   }
   main div.splash {
     display: grid;
