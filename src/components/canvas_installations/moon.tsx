@@ -11,6 +11,23 @@ function Moon({ onClick }: IProps) {
   const interval = useRef(null);
   const time = useRef(0);
   var opacity = 0.5;
+  const palettes = [
+    ["#001431", "#0C2C73"],
+    ["blue", "lightblue"],
+    ["#410356", "#AC4BCB"],
+  ];
+
+  let t = 0;
+  function setTheme() {
+    let theme: string = sessionStorage.getItem("theme");
+    if (theme == "black") {
+      t = 0;
+    } else if (theme == "white") {
+      t = 1;
+    } else if (theme == "pink") {
+      t = 2;
+    }
+  }
 
   useEffect(() => {
     setCtx(canvas.current?.getContext("2d"));
@@ -54,8 +71,8 @@ function Moon({ onClick }: IProps) {
     //Nightsky
     ctx.beginPath();
     var nightgrd = ctx.createLinearGradient(0, 0, 650, 350);
-    nightgrd.addColorStop(0, "#001431");
-    nightgrd.addColorStop(1, "#0C2C73");
+    nightgrd.addColorStop(0, palettes[t][0]);
+    nightgrd.addColorStop(1, palettes[t][1]);
     ctx.fillStyle = nightgrd;
     ctx.fillRect(0, 0, 650, 350);
 
@@ -352,6 +369,7 @@ function Moon({ onClick }: IProps) {
     drawStar(600, 50, opacity);
     drawStar(650, 150, opacity);
     drawStar(680, 80, opacity);
+    setTheme();
   };
 
   useEffect(() => {
