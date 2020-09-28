@@ -132,7 +132,7 @@ function Snow({ onClick }: IProps) {
         draw(ctx, time.current);
       }, 100);
     }
-  }, [ctx]);
+  }, [ctx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

@@ -177,7 +177,7 @@ function Flower({ onClick }: IProps) {
         draw(ctx);
       });
     }
-  }, [ctx]);
+  }, [ctx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
