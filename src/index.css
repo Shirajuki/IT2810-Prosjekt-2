@@ -91,10 +91,9 @@ code {
 Star {
   height: 20px;
 }
-.modal-header {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+
+.modal-header .favourite {
+  background: transparent;
 }
 
 button {
