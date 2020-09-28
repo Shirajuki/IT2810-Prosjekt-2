@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { FavContext } from "./contexts";
+import { FavContext } from "../contexts";
 
 interface IProps {
   id: string;

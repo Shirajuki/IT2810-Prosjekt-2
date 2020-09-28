@@ -53,22 +53,21 @@ function Moon({ onClick }: IProps) {
     } else {
       opacity = 0.1;
     }
+
+    //Nightsky
     ctx.beginPath();
     var nightgrd = ctx.createLinearGradient(0, 0, 650, 350);
     nightgrd.addColorStop(0, "#001431");
     nightgrd.addColorStop(1, "#0C2C73");
     ctx.fillStyle = nightgrd;
     ctx.fillRect(0, 0, 650, 350);
-    //ctx.drawImage(pattern.current, 0, 0, ctx.canvas.width, ctx.canvas.height);
+
     ctx.rect(0, 0, 750, 350);
     ctx.fill();
     ctx.closePath();
 
-    //ctx.drawImage(imgNightSky, 0, 0, 650, 350);
-
+    //Lake
     ctx.beginPath();
-    //95B5C3  203644
-    //ctx.drawImage(pattern.current, 0, 0, ctx.canvas.width, ctx.canvas.height);
     var grd = ctx.createLinearGradient(0, 0, 650, 350);
     grd.addColorStop(0, "#007EC1");
     grd.addColorStop(1, "#012653");
@@ -76,12 +75,14 @@ function Moon({ onClick }: IProps) {
     ctx.fillRect(0, 200, 750, 350);
     ctx.closePath();
 
+    //Moon reflection
     ctx.beginPath();
     ctx.arc(325, 270, 50, 0, 2 * Math.PI, true);
     ctx.fillStyle = "rgb(250, 250, 250, 0.6)";
     ctx.fill();
     ctx.closePath();
 
+    //Moonspots
     ctx.beginPath();
     ctx.arc(330, 260, 10, 0, 2 * Math.PI, true);
     ctx.fillStyle = "#aaa";
@@ -100,6 +101,7 @@ function Moon({ onClick }: IProps) {
     ctx.fill();
     ctx.closePath();
 
+    //Moon
     ctx.beginPath();
     var rgrd = ctx.createRadialGradient(310, 100, 70, 325, 250, 1);
     rgrd.addColorStop(0, "white");
@@ -109,6 +111,7 @@ function Moon({ onClick }: IProps) {
     ctx.fill();
     ctx.closePath();
 
+    //Moon spots
     ctx.beginPath();
     ctx.arc(330, 90, 10, 0, 2 * Math.PI, true);
     ctx.fillStyle = "#aaa8";
@@ -127,6 +130,7 @@ function Moon({ onClick }: IProps) {
     ctx.fill();
     ctx.closePath();
 
+    //Grass
     ctx.beginPath();
     ctx.fillStyle = "darkgreen";
     ctx.moveTo(0, 370);
@@ -335,7 +339,7 @@ function Moon({ onClick }: IProps) {
     ctx.fill();
     ctx.closePath();
 
-    //Star
+    //Stars
     drawStar(50, 100, opacity);
     drawStar(90, 150, opacity);
     drawStar(90, 30, opacity);

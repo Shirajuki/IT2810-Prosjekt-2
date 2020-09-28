@@ -16,7 +16,7 @@ const getAudio = (title: string) => {
     case "Winter Song":
       return "audiofiles/Winter_Wonderland.mp3";
     case "Epitaph. on Mrs Corbet, Who Died of a Cancer in Her Breast.":
-      return "audiofiles/Kalimba.mp3";
+      return "audiofiles/death.mp3";
     case "Ah, Moon -- and Star!":
       return "audiofiles/Crickets.mp3";
     case "Fragment: Home":
