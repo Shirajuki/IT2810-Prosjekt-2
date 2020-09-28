@@ -18,13 +18,10 @@ As stated earlier, we used a pre-made poetry database to get the text for our ar
 ### HTML Web Storage
 
 On our webpage a user will see a favorite button when opening the different artworks, by pressing this it will use HTML web storage and save this option for a user on their browser. This is achieved by using local storage, by doing this, every user can have their own unique webpage that they can customize to a degree. A user can change the theme of the webpage by pressing the different buttons with text in the top div bar. This will then be saved in a session storage, so that a user can refresh the page and keep the theme choice, but when the page is closed, the theme resets. 
-*In each modal every user has the option to change the music. When the music is changed this information is stored in session storage, so as long as the webpage is open, this music choice will be saved. When the webpage is closed and opened again, the music will go back to the original sound.*
 
 ### Web design
 
-To make the website accessible to as many people as possible on as many devices as possible, the attribute @media was used so that the items on the screen would fit different screen sizes. When opening the project on a computer a user will see that the space is utilized well so that the artwork is not cramped on top of each other. When the screen gets smaller this can be an issue, so by using @media and a max screen size, the layout of the page changes so that it is still user friendly. This indicates a transformative and flexible layout. The images themselves have a max size of 750 by 450, but when this size is not possible it will transform to fit the screen size without distorting the image. This is done by using CSS element viewbox.
-
--   Viewport???
+To make the website accessible to as many people as possible on as many devices as possible, the attribute @media was used so that the items on the screen would fit different screen sizes. When opening the project on a computer a user will see that the space is utilized well so that the artwork is not cramped on top of each other. When the screen gets smaller this can be an issue, so by using @media and a max screen size, the layout of the page changes so that it is still user friendly. This indicates a transformative and flexible layout. The images themselves have a max size of 750 by 450, but when this size is not possible it will transform to fit the screen size without distorting the image. This is done by using CSS element viewbox. Using the meta tag Viewport in index.html, we could correctly scale the webpage to fit all devices. This makes it so that the webpage will have a clean look on also on mobile devices. 
 
 ### Testing
 
