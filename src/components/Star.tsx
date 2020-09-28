@@ -5,6 +5,7 @@ interface IProps {
   id: string;
 }
 
+//Sets the consumer for our useContext hook to update
 export default function Star({ id }: IProps) {
   return (
     <FavContext.Consumer>
