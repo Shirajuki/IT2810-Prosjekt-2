@@ -11,14 +11,16 @@ var header: string;
 var hover: string;
 var border: string;
 var text: string;
+var button: string;
 
 function setTheme(theme: string = "") {
   if (theme === "black") {
     background = "#171717";
     header = "rgba(23, 23, 23, 0.9)";
-    hover = "#101010";
+    hover = "#fff7";
     border = "#445f8f";
     text = "#fff";
+    button = "#fff3";
     sessionStorage.setItem("theme", "black");
   } else if (theme === "white") {
     background = "#FFF";
@@ -26,6 +28,7 @@ function setTheme(theme: string = "") {
     hover = "rgba(200, 200, 200, 0.9)";
     border = "#000";
     text = "000";
+    button = "#aaa";
     sessionStorage.setItem("theme", "white");
   } else if (theme === "pink") {
     background = "#fab8d5";
@@ -33,6 +36,7 @@ function setTheme(theme: string = "") {
     hover = "#f476ab";
     border = "#b7d2e0";
     text = "#fff";
+    button = "#f897c0";
     sessionStorage.setItem("theme", "pink");
   }
   document.documentElement.style.setProperty("--background-colors", background);
@@ -40,6 +44,7 @@ function setTheme(theme: string = "") {
   document.documentElement.style.setProperty("--hover-color", hover);
   document.documentElement.style.setProperty("--border-color", border);
   document.documentElement.style.setProperty("--text-color", text);
+  document.documentElement.style.setProperty("--button-color", button);
 }
 function App() {
   const [modal, setModal] = useState({
