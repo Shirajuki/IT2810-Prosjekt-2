@@ -75,7 +75,7 @@ function App() {
           <div>
             <h1>
               <a href="index.html" className="logo">
-                Kunst utstilling
+                Art exhibition
               </a>
             </h1>
             <nav>
@@ -109,7 +109,6 @@ function App() {
             <button onClick={() => setModal({ title: "", tab: "2" })}>
               Tab 2
             </button>
-            <hr />
           </div>
           <div
             className="artWrapper"
