@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-import Installation from "./Installation";
-import Slideshow from "./Slideshow";
-import ArtDisplay from "./ArtDisplay";
+import Installation from "./components/Installation";
+import Slideshow from "./components/Slideshow";
+import ArtDisplay from "./components/ArtDisplay";
 import Favourites from "./Favourites";
-import Star from "./Star";
-import { FavContext } from "./contexts";
+import Star from "./components/Star";
+import { FavContext } from "./components/contexts";
 var background: string;
 var header: string;
 var hover: string;

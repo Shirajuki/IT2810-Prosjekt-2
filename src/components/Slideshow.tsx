@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import InstallationDisplay from "./InstallationDisplay";
-import Favourites from "./Favourites";
+import Favourites from "../Favourites";
 type slideType = {
 	title: string;
 }

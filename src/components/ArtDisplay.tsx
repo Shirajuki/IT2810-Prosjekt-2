@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Poem from "./Poem";
-import "./App.css";
 import InstallationDisplay from "./InstallationDisplay";
 import Star from "./Star";
 
