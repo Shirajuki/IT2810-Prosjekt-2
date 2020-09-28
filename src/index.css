@@ -266,7 +266,7 @@ div.splash > div.active {
   background-color: rgba(240, 240, 240, 0.5);
 }
 
-.tab-button {
+button {
   cursor: pointer;
   padding: 5px;
   color: #fff;
@@ -279,13 +279,14 @@ div.splash > div.active {
   transition: all 0.5s;
 }
 
-.tab-button:hover {
+button:hover {
   color: #355684;
   background-color: var(--hover-color);
 }
 
 .favourite {
   color: var(--text-color);
+  background-color: transparent;
 }
 /* SPLITS **********************************************************/
 div.sectionsplit {
@@ -302,7 +303,6 @@ div.sectionsplit2 {
 .tabBox button {
   padding: 5px;
   margin-right: 5px;
-  background-color: rgba(240, 240, 240, 0.5);
   color: #fff;
   text-decoration: none;
   transition: background-color 0.5s;
