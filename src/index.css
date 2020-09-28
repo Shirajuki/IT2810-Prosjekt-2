@@ -1,3 +1,6 @@
+/* 
+ * ROOT
+ */
 :root {
 	--background-colors: #171717;
 	--header-color: rgba(23, 23, 23, 0.9);
@@ -6,6 +9,9 @@
 	--text-color: #fff;
 	--button-color: #fff3;
 }
+/*
+ * BODY 
+ */
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,89 +19,6 @@ body {
 	sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-.tab-line {
-	margin-top: 20px;
-	height: 3px;
-	border: none;
-	background-color: var(--button-color);
-}
-
-.favourite {
-	position: absolute;
-	left: 0;
-	bottom: 2px;
-	font-size: 1.2rem;
-	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 2;
-}
-.favourite:hover {
-	background-color: rgba(0, 0, 0, 0.95);
-}
-.InstallationWrapper {
-	position: relative;
-}
-.darkOverlay {
-	font-size: 5rem;
-	align-items: center;
-	justify-content: center;
-	display: flex;
-	position: absolute;
-	width: 100%;
-	height: calc(100% - 2px);
-	cursor: pointer;
-	transition: color 0.5s;
-	background-color: rgba(0, 0, 0, 0.6);
-}
-.darkOverlay:hover {
-	color: #445f8f;
-}
-.close-button {
-	cursor: pointer;
-	font-size: 2rem;
-}
-.close-button:hover {
-	color: deeppink;
-}
-.modal-container {
-	position: fixed; /* Stay in place */
-	z-index: 4; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0, 0, 0); /* Fallback color */
-	background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
-}
-
-#modal-content {
-	background-color: var(--background-colors);
-	/* margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, calc(-50% + 25px));
-	max-height: calc(100vh - 150px);
-}
-Star {
-	height: 20px;
-}
-
-.modal-header .favourite {
-	background: transparent;
-}
-
-button {
-	cursor: pointer;
-	background: transparent;
-	height: 48px;
-	width: 45px;
-	border: none;
-	color: white;
 }
 /* 
  ***********************************
@@ -108,23 +31,10 @@ button {
  * #7F8F95 - blueish slategray
  *
  */
-/* MAIN ************************************************************/
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-hr,
-dl,
-dd,
-ol,
-ul,
-figure {
+/* 
+ * MAIN ***********************************************************
+ */
+body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,dl,dd,ol,ul,figure {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -149,7 +59,9 @@ header button,
 div.wrapper {
 	min-height: calc(100vh - 50px);
 }
-/* NAV *************************************************************/
+/* 
+ * NAV ************************************************************
+ */
 header {
 	position: fixed;
 	height: 50px;
@@ -187,7 +99,9 @@ main {
 	display: flex;
 	flex-direction: column;
 }
-/* SPLASH **********************************************************/
+/* 
+ * SPLASH *********************************************************
+ */
 .titlefont,
 .title {
 	text-transform: uppercase;
@@ -263,7 +177,20 @@ div.splash > div.active {
 	width: 100%;
 	height: 100%;
 }
-/* BUTTONS *********************************************************/
+/* 
+ * BUTTONS ********************************************************
+ */
+button {
+	cursor: pointer;
+	padding: 5px;
+	color: #fff;
+	text-decoration: none;
+	width: 40px;
+	padding: 10px;
+	background-color: var(--header-color);
+	box-shadow: inset 0 -2px 0 transparent, 0 2px 0 transparent;
+	transition: all 0.5s;
+}
 .splash .btnWrapper {
 	position: absolute;
 	top: 50%;
@@ -279,33 +206,9 @@ div.splash > div.active {
 	position: absolute;
 	z-index: 10;
 }
-.button {
-	cursor: pointer;
-	padding: 5px;
-	color: #fff;
-	text-decoration: none;
-	width: 40px;
-	height: 50px;
-	padding: 10px;
-	background-color: rgba(0, 0, 0, 0.5);
-	box-shadow: inset 0 -2px 0 transparent, 0 2px 0 transparent;
-	transition: all 0.5s;
-}
 .button:hover {
 	color: #355684;
 	background-color: rgba(240, 240, 240, 0.5);
-}
-
-button {
-	cursor: pointer;
-	padding: 5px;
-	color: #fff;
-	text-decoration: none;
-	width: 40px;
-	padding: 10px;
-	background-color: var(--header-color);
-	box-shadow: inset 0 -2px 0 transparent, 0 2px 0 transparent;
-	transition: all 0.5s;
 }
 button:hover {
 	background-color: var(--hover-color);
@@ -314,8 +217,9 @@ canvas,
 svg {
 	cursor: pointer;
 }
-
-/* SPLITS **********************************************************/
+/* 
+ * SPLITS *********************************************************
+ */
 div.sectionsplit {
 	height: 50px;
 }
@@ -323,7 +227,15 @@ div.sectionsplit2 {
 	height: 10vh;
 	background-color: #dfdfdf;
 }
-/* ART *************************************************************/
+.tab-line {
+	margin-top: 20px;
+	height: 3px;
+	border: none;
+	background-color: var(--button-color);
+}
+/* 
+ * ART ************************************************************
+ */
 .bigPoetry {
 	margin-top: 50px;
 }
@@ -335,7 +247,6 @@ div.sectionsplit2 {
 	transition: background-color 0.5s;
 	background-color: var(--button-color);
 }
-
 .tabBox button:hover {
 	background-color: var(--hover-color);
 }
@@ -382,8 +293,27 @@ div.sectionsplit2 {
 	order: 0;
 	text-align: right;
 }
-
-/*Installation*/
+.InstallationWrapper {
+	position: relative;
+}
+.darkOverlay {
+	font-size: 5rem;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 2px);
+	cursor: pointer;
+	transition: color 0.5s;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+.darkOverlay:hover {
+	color: #445f8f;
+}
+/*
+ * INSTALLATION ***************************************************
+ */
 .installation-title {
 	text-align: center;
 	margin-bottom: 20px;
@@ -397,7 +327,6 @@ div.sectionsplit2 {
 	max-height: calc(100vh - 250px);
 	overflow-y: auto;
 }
-
 .installation-wrapper canvas {
 	max-width: 750px;
 	margin: auto;
@@ -409,17 +338,33 @@ div.sectionsplit2 {
 .svg {
 	text-align: center;
 }
-
 .poem-container {
 	text-align: center;
 }
-
 .installation-image {
 	min-width: 650px;
 	height: 350px;
 }
-
-/* POETRY **********************************************************/
+Star {
+	height: 20px;
+}
+.favourite {
+	position: absolute;
+	left: 0;
+	bottom: 2px;
+	font-size: 1.2rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+}
+.favourite:hover {
+	background-color: rgba(0, 0, 0, 0.95);
+}
+.modal-header .favourite {
+	background: transparent;
+}
+/* 
+ * POETRY *********************************************************
+ */
 .poetryBox {
 	border-left: 7px solid var(--border-color);
 	padding-left: 10px;
@@ -432,7 +377,42 @@ div.sectionsplit2 {
 	padding-right: 10px;
 	margin-right: 20px;
 }
-/* FOOTER **********************************************************/
+/*
+ * MODAL **********************************************************
+ */
+.close-button {
+	cursor: pointer;
+	font-size: 2rem;
+}
+.close-button:hover {
+	color: deeppink;
+}
+.modal-container {
+	position: fixed; /* Stay in place */
+	z-index: 4; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+}
+#modal-content {
+	background-color: var(--background-colors);
+	/* margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, calc(-50% + 25px));
+	max-height: calc(100vh - 150px);
+}
+/* 
+ * FOOTER *********************************************************
+ */
 footer {
 	display: flex;
 	justify-content: center;
@@ -443,7 +423,9 @@ footer {
 	width: 100%;
 	background-color: var(--background-colors);
 }
-/* TABLET **********************************************************/
+/*
+ * RESPONSIVE *****************************************************
+ */
 @media screen and (max-width: 800px) {
 	.div4 > div > h1.title {
 		font-size: 2rem;
@@ -502,7 +484,6 @@ footer {
 	.div5 {
 		grid-area: 2 / 1 / 4 / 4;
 	}
-
 	.div1,
 	.div2,
 	.div3 {
