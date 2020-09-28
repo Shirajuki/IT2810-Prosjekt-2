@@ -4,8 +4,12 @@ import Favourites from "./Favourites";
 type slideType = {
 	title: string;
 }
+interface IProps {
+	setModal: (title:string) => void;
+}
 interface SlideshowProps {
 	slides: slideType[];
+	setModal: (title:string) => void;
 }
 interface SlideshowState {
 	count: number;
@@ -24,13 +28,12 @@ class Slide extends Component<SlideshowProps,SlideshowState> {
 	render() {
 		return (
 			<div className="Slideshow">
-				<Display count={this.state.count} slides={this.props.slides} setSlide={this.setSlide.bind(this)} changeSlide={this.changeSlide.bind(this)}/>
-				
+				<Display count={this.state.count} slides={this.props.slides} setSlide={this.setSlide.bind(this)} changeSlide={this.changeSlide.bind(this)} setModal={this.props.setModal}/>
 			</div>
 		);
 	}
 }
-const Display = (props: {count: number, slides: slideType[], setSlide: (n: number) => void, changeSlide: () => void}) => {
+const Display = (props: {count: number, slides: slideType[], setSlide: (n: number) => void, changeSlide: () => void, setModal: (title:string) => void}) => {
 	return (
 		<div className="splash">
 			<div className={`div1 ${props.count === 0 ? "active" : "inactive"}`} onClick={() => props.setSlide(0)}>
@@ -57,7 +60,7 @@ const Display = (props: {count: number, slides: slideType[], setSlide: (n: numbe
 				</div>
 			</div>
 			<div className="div5">
-				<InstallationDisplay title={props.slides[props.count].title}></InstallationDisplay>
+				<InstallationDisplay onClick={() => props.setModal(props.slides[props.count].title)} title={props.slides[props.count].title}></InstallationDisplay>
 				<div className="btnWrapper">
 					<button className="button" onClick={() => props.changeSlide()}>></button>
 				</div>
@@ -77,9 +80,9 @@ const slides: slideType[] = [
 		title: Favourites.arts[2],
 	},
 ];
-function Slideshow() {
+function Slideshow( props: IProps ) {
 	return (
-		<Slide slides={slides}/>
+		<Slide slides={slides} setModal={props.setModal}/>
 	);
 }
 
