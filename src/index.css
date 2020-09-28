@@ -4,6 +4,7 @@
   --hover-color: #fff3;
   --border-color: #445f8f;
   --text-color: #fff;
+  --button-color: #fff3;
 }
 
 body {
@@ -24,7 +25,7 @@ code {
   margin-top: 20px;
   height: 3px;
   border: none;
-  background-color: var(--header-color);
+  background-color: var(--button-color);
 }
 
 .favourite {
@@ -340,6 +341,7 @@ div.sectionsplit2 {
   color: #fff;
   text-decoration: none;
   transition: background-color 0.5s;
+  background-color: var(--button-color);
 }
 
 .tabBox button:hover {
