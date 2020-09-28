@@ -65,7 +65,9 @@ function App() {
 		setFavorites((fs) => ({ ...fs, [id]: checked }));
 		Favourites.setFavoriteInStorage(id, checked);
 	}
-
+	const slideShowModal = (title:string) => {
+		setModal({ title: title, tab: modal.tab });
+	};
 	return (
 		<FavContext.Provider value={{ favorites, setFavorite }}>
 			<div className="wrapper">
@@ -73,7 +75,7 @@ function App() {
 					<div>
 						<h1>
 							<a href="index.html" className="logo">
-								Kunst ustilling
+								Kunst utstilling
 							</a>
 						</h1>
 						<nav>
@@ -91,7 +93,7 @@ function App() {
 				</header>
 				<br />
 				<main>
-					<Slideshow />
+					<Slideshow setModal={slideShowModal}/>
 					<div className="sectionsplit"></div>
 					<div className="sectionsplit"></div>
 					<div className="tabBox">
