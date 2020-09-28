@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 interface IProps {
   onClick: () => void;
 }
-//("The Moon, how definite its orb! (fragment)");
 
 function Moon({ onClick }: IProps) {
   const canvas = useRef<HTMLCanvasElement>(null);
