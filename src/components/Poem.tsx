@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 const prefixUrl = "https://poetrydb.org";
 
+//Declares type of title
 interface IProps {
   title: string;
 }
+
+/*Function that fetches a poem based of it's title from the 
+poetrydb database and displays it's lines*/
 
 function Poem({ title }: IProps) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    //console.log(prefixUrl + "/title/" + title + "/lines.json");
     fetch(prefixUrl + "/title/" + title + "/lines.json")
       .then((results) => results.json())
       .then((poem) => {

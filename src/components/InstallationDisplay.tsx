@@ -9,6 +9,7 @@ import MoonAndStar from "./SVG_installations/MoonAndStar";
 import Home from "./SVG_installations/Home";
 import Flower from "./canvas_installations/flower";
 
+//Maps the title to the correct image to make everything in the installation accessible based on title
 const Display = (props: { title: string; onClick?: () => void }) => {
   const project = () => {
     switch (props.title) {
@@ -37,6 +38,7 @@ const Display = (props: { title: string; onClick?: () => void }) => {
   return project();
 };
 
+//Returns the picture assosiated with the title given
 function InstallationDisplay(props: { title: string; onClick?: () => void }) {
   return (
     <>

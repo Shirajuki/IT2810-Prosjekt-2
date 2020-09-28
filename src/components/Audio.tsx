@@ -3,6 +3,8 @@ import React from "react";
 interface IProps {
   title: string;
 }
+
+//Maps the title to the correct audiofile to make everything in the installation accessible based on title
 const getAudio = (title: string) => {
   switch (title) {
     case "A Wall Flower":
@@ -28,6 +30,7 @@ const getAudio = (title: string) => {
   }
 };
 
+//Returns the correct audiofile and sets it to autoplay on load
 function Audio({ title }: IProps) {
   return (
     <>

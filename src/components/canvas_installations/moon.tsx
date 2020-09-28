@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react";
 
 interface IProps {
@@ -8,16 +9,13 @@ interface IProps {
 function Moon({ onClick }: IProps) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const [ctx, setCtx] = useState(null);
+  const interval = useRef(null);
+  const time = useRef(0);
   var opacity = 0.5;
-  var imgNightSky = new Image();
-  imgNightSky.src = "unnamed.jpg";
 
   useEffect(() => {
     setCtx(canvas.current?.getContext("2d"));
   }, [canvas]);
-
-  const interval = useRef(null);
-  const time = useRef(0);
 
   function drawStar(x = 0, y = 0, opacity = 0.5) {
     ctx.beginPath();
