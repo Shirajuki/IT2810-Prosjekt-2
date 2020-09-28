@@ -312,6 +312,7 @@ div.sectionsplit2 {
 }
 .artWrapper {
   display: block;
+  overflow-y: hidden;
 }
 .artWrapper canvas,
 .artWrapper svg {
