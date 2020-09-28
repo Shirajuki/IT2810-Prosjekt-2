@@ -79,7 +79,7 @@ function addFavourite(title: string) {
   }
 }
 
-//Checks if an insallation is in favourites and removes it if so.
+//Checks if an installation is in favourites and removes it if so.
 function removeFavourite(title: string) {
   for (let i = 0; i < favourites.length; i++) {
     if (favourites[i] === title) {
