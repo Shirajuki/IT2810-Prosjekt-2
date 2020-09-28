@@ -5,6 +5,18 @@ interface IProps {
 }
 
 function Flower({ onClick }: IProps) {
+  const palette = [
+		[`rgb(245,243,198)`, `rgb(255,204,229)`],
+		[`rgb(198, 245, 245)`, `rgb(245, 196, 81)`],
+		[`rgb(245, 198, 211)`, `rgb(81, 207, 245)`],
+	];
+	let t = 0;
+	function setTheme() {
+		let theme: string = sessionStorage.getItem("theme");
+		if (theme == "black") {t = 0}
+		else if (theme == "white") {t = 1}
+		else if (theme == "pink") {t = 2}
+	}
   const canvas = useRef<HTMLCanvasElement>(null);
   const [ctx, setCtx] = useState(null);
 
@@ -26,7 +38,7 @@ function Flower({ onClick }: IProps) {
     ctx.beginPath();
     // Create gradient
     let grd = ctx.createLinearGradient(0, 0, 0, 750);
-    grd.addColorStop(0, `rgb(245,243,198)`);
+    grd.addColorStop(0, palette[t][0]);
     grd.addColorStop(1, "rgb(255,255,255)");
 
     // Create background
@@ -88,7 +100,7 @@ function Flower({ onClick }: IProps) {
     ctx.arc(340, pedal1.current + 190, 30, 0, Math.PI * 2);
     ctx.strokeStyle = "transparent";
     ctx.stroke();
-    ctx.fillStyle = `rgb(255,204,229)`;
+    ctx.fillStyle = palette[t][1];
     ctx.fill();
     ctx.closePath();
 
@@ -96,7 +108,7 @@ function Flower({ onClick }: IProps) {
     ctx.arc(355, pedal2.current + 160, 30, 0, Math.PI * 2);
     ctx.strokeStyle = "transparent";
     ctx.stroke();
-    ctx.fillStyle = `rgb(255,204,229)`;
+    ctx.fillStyle = palette[t][1];
     ctx.fill();
     ctx.closePath();
 
@@ -104,7 +116,7 @@ function Flower({ onClick }: IProps) {
     ctx.arc(400, pedal3.current + 165, 30, 0, Math.PI * 2);
     ctx.strokeStyle = "transparent";
     ctx.stroke();
-    ctx.fillStyle = `rgb(255,204,229)`;
+    ctx.fillStyle = palette[t][1];
     ctx.fill();
     ctx.closePath();
 
@@ -112,7 +124,7 @@ function Flower({ onClick }: IProps) {
     ctx.arc(370, pedal4.current + 215, 30, 0, Math.PI * 2);
     ctx.strokeStyle = "transparent";
     ctx.stroke();
-    ctx.fillStyle = `rgb(255,204,229)`;
+    ctx.fillStyle = palette[t][1];
     ctx.fill();
     ctx.closePath();
 
@@ -120,7 +132,7 @@ function Flower({ onClick }: IProps) {
     ctx.arc(405, pedal5.current + 200, 30, 0, Math.PI * 2);
     ctx.strokeStyle = "transparent";
     ctx.stroke();
-    ctx.fillStyle = `rgb(255,204,229)`;
+    ctx.fillStyle = palette[t][1];
     ctx.fill();
     ctx.closePath();
 
@@ -132,6 +144,8 @@ function Flower({ onClick }: IProps) {
     ctx.fillStyle = `rgb(255,255,153)`;
     ctx.fill();
     ctx.closePath();
+
+    setTheme();
   };
 
   useEffect(() => {
