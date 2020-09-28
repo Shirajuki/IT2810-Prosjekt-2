@@ -62,7 +62,7 @@ const Display = (props: {count: number, slides: slideType[], setSlide: (n: numbe
 			<div className="div5">
 				<InstallationDisplay onClick={() => props.setModal(props.slides[props.count].title)} title={props.slides[props.count].title}></InstallationDisplay>
 				<div className="btnWrapper">
-					<button className="button" onClick={() => props.changeSlide()}>></button>
+					<button className="button" onClick={() => props.changeSlide()}>&gt;</button>
 				</div>
 			</div>
 		</div>

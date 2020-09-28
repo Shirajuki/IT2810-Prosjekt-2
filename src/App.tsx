@@ -264,7 +264,7 @@ function App() {
           <Installation title={modal.title}></Installation>
         </div>
       </div>
-      <footer></footer>
+      <footer> Art exhibition - gruppe 07 </footer>
     </FavContext.Provider>
   );
 }
