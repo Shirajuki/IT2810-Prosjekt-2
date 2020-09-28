@@ -37,7 +37,7 @@ function getFavoriteFromStorage(title: string): boolean {
   }
 }
 
-//Adds an installaton to localStorage's favourite list
+//Adds an installation to localStorage's favourite list
 function setFavoriteInStorage(title: string, checked: boolean): void {
   try {
     if (checked) {
