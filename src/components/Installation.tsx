@@ -1,6 +1,5 @@
 import React from "react";
 import Poem from "./Poem";
-import "./App.css";
 import InstallationDisplay from "./InstallationDisplay";
 import Audio from "./Audio";
 
