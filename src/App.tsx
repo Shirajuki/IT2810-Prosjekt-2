@@ -75,7 +75,7 @@ function App() {
 					<div>
 						<h1>
 							<a href="index.html" className="logo">
-								Kunst utstilling
+								Art exhibition
 							</a>
 						</h1>
 						<nav>
