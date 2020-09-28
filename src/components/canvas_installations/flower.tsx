@@ -13,9 +13,9 @@ function Flower({ onClick }: IProps) {
 	let t = 0;
 	function setTheme() {
 		let theme: string = sessionStorage.getItem("theme");
-		if (theme == "black") {t = 0}
-		else if (theme == "white") {t = 1}
-		else if (theme == "pink") {t = 2}
+		if (theme === "black") {t = 0}
+		else if (theme === "white") {t = 1}
+		else if (theme === "pink") {t = 2}
 	}
   const canvas = useRef<HTMLCanvasElement>(null);
   const [ctx, setCtx] = useState(null);
