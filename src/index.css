@@ -1,7 +1,7 @@
 :root {
   --background-colors: #171717;
   --header-color: rgba(23, 23, 23, 0.9);
-  --hover-color: #101010;
+  --hover-color: #fff3;
   --border-color: #445f8f;
   --text-color: #fff;
 }
@@ -151,7 +151,7 @@ header button:hover {
   background-color: rgba(240, 240, 240, 0.5);
 }
 main {
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   margin: 0 auto;
   width: 80%;
   display: flex;
@@ -307,6 +307,11 @@ div.sectionsplit2 {
   text-decoration: none;
   transition: background-color 0.5s;
 }
+
+.tabBox button:hover {
+  background-color: var(--hover-color);
+}
+
 .tabBox a:hover {
   background-color: rgba(240, 240, 240, 0.3);
 }
