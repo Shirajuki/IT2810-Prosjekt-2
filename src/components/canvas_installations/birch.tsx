@@ -22,23 +22,23 @@ function Birch({onClick}: IProps) {
 	const leaves: leafObject[] = [];
 	const sun: sunObject = {"r": 110, "v": 0.25, "b": false}
 	const palettes = [
-		["#1a5234","#3d913f","brown","#183a23"],
-		["#1a5234","#3d913f","white","#183a23"],
-		["#1a5234","#3d913f","deeppink","#183a23"],
+		["brown","#b879aa"], // dark
+		["white","#ffe0f8"], // light
+		["deeppink","#de3cba"], // pink
 	];
 	let t = 0;
 	function setTheme() {
-		let theme: string = sessionStorage.getItem("theme");
-		if (theme == "black") {t = 0}
-		else if (theme == "white") {t = 1}
-		else if (theme == "pink") {t = 2}
+		const theme: string = sessionStorage.getItem("theme");
+		if (theme === "black") {t = 0}
+		else if (theme === "white") {t = 1}
+		else if (theme === "pink") {t = 2}
 	}
 	useEffect(() => {
 		setCtx(canvas.current?.getContext("2d"));
 	}, [canvas]);
 	const drawLeaf = (ctx: CanvasRenderingContext2D, obj: leafObject) => {
 		ctx.beginPath();
-		ctx.fillStyle=palettes[t][0];
+		ctx.fillStyle="#1a5234";
 		ctx.arc(obj.x,obj.y,obj.r,0,2*Math.PI,false)
 		ctx.fill()
 		ctx.closePath();
@@ -50,21 +50,21 @@ function Birch({onClick}: IProps) {
 		ctx.scale(sX, sY);
 		// Pine trees
 		ctx.beginPath();
-		ctx.fillStyle = palettes[t][1];
+		ctx.fillStyle = "#3d913f";
 		// x = 59.5, y = 330
 		ctx.ellipse(x, y, 10, 25, Math.PI/2, 0, 2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
 		ctx.beginPath();
-		ctx.fillStyle = palettes[t][2];
+		ctx.fillStyle = palettes[t][0];
 		ctx.rect(x-7.5, y-40, 15, 40);
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
 		// Leaves
 		ctx.beginPath();
-		ctx.fillStyle = palettes[t][0];
+		ctx.fillStyle = "#1a5234";
 		ctx.moveTo(x-39.5, y-20);
 		ctx.lineTo(x+43, y-20);
 		ctx.lineTo(x+1.75, y-55);
@@ -72,7 +72,7 @@ function Birch({onClick}: IProps) {
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
-		ctx.fillStyle = palettes[t][3];
+		ctx.fillStyle = "#183a23";
 		ctx.moveTo(x-31.5, y-40);
 		ctx.lineTo(x+35, y-40);
 		ctx.lineTo(x+1.75, y-75);
@@ -80,7 +80,7 @@ function Birch({onClick}: IProps) {
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
-		ctx.fillStyle = palettes[t][0];
+		ctx.fillStyle = "#1a5234";
 		ctx.moveTo(x-24.5, y-60);
 		ctx.lineTo(x+28, y-60);
 		ctx.lineTo(x+1.75, y-95);
@@ -94,7 +94,7 @@ function Birch({onClick}: IProps) {
 		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 		ctx.beginPath();
 		ctx.beginPath();
-		ctx.fillStyle = "#ffe0f8";
+		ctx.fillStyle = palettes[t][1];
 		ctx.fillRect(0,0,750,450);
 		ctx.closePath();
 		// Background

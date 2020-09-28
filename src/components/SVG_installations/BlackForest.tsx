@@ -14,9 +14,9 @@ function BlackForest({onClick}: IProps) {
 					</pattern>
 					<pattern id="tree" x="-10" y="-10" width="55" height="60" patternUnits="userSpaceOnUse">
 						<rect height="30" width="13" y="30" x="20" fill="black"/>
-						<path d="m 0 52 l 27 -35 l 30 35 z" fill="#black"/>
-						<path d="m 2 42 l 25 -35 l 26 35 z" fill="#black"/>
-						<path d="m 4 32 l 23 -30 l 24 30 z" fill="#black"/>
+						<path d="m 0 52 l 27 -35 l 30 35 z" fill="black"/>
+						<path d="m 2 42 l 25 -35 l 26 35 z" fill="black"/>
+						<path d="m 4 32 l 23 -30 l 24 30 z" fill="black"/>
 					</pattern>
 					<pattern id="cross" x="0" y="0" width="40" height="60" patternUnits="objectBoundingBox">
 						<rect x="0" y="0" width="40" height="50" fill="white"/>

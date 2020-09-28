@@ -14,6 +14,18 @@ function WallFlower({onClick}: IProps) {
 	const [ctx, setCtx] = useState(null);
 	const opacity: opacityObject = {"s1": [0,0.2,0.1,0.3,0.1], "s2": [0.4,0.4,0.4,0.4,0.3], "v": [0.008,0.012,0.012,0.01,0.015,0.01], "b": [false,false,false,false,false,false]};
 	let anim = 0;
+	let t = 0;
+	function setTheme() {
+		const theme: string = sessionStorage.getItem("theme");
+		if (theme === "black") {t = 0}
+		else if (theme === "white") {t = 1}
+		else if (theme === "pink") {t = 2}
+	}
+	const palette = [
+		["black"],
+		["white"],
+		["deeppink"],
+	];
 	useEffect(() => {
 		setCtx(canvas.current?.getContext("2d"));
 	}, [canvas]);
@@ -23,16 +35,16 @@ function WallFlower({onClick}: IProps) {
 		ctx.translate(x + 750 / 2, y + 450 / 2);
 		ctx.rotate(rot);
 		ctx.beginPath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = palette[t][0];
 		ctx.fillRect(x,y,7,28);
 		ctx.closePath();
 		ctx.beginPath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = palette[t][0];
 		ctx.ellipse(x-1.5, y+29, 6, 8, Math.PI/2.5, 0, 2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = palette[t][0];
 		ctx.fillRect(x,y,20,7);
 		ctx.closePath();
 		ctx.restore();
@@ -261,27 +273,27 @@ function WallFlower({onClick}: IProps) {
 		ctx.closePath();
 		// Petal
 		ctx.beginPath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = palette[t][0];
 		ctx.arc(590,245,30,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = palette[t][0];
 		ctx.arc(617,289,35,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = palette[t][0];
 		ctx.arc(682,280,35,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = palette[t][0];
 		ctx.arc(682,220,40,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		ctx.beginPath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = palette[t][0];
 		ctx.arc(630,210,40,0,2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
@@ -303,6 +315,7 @@ function WallFlower({onClick}: IProps) {
 				}
 			}
 		}
+		setTheme();
 		requestAnimationFrame(() => draw(ctx));
 	};
 
