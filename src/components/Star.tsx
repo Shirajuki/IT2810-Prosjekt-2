@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
-import { FavContext } from "./contexts";
+import { FavContext } from "../contexts";
 
 interface IProps {
   id: string;
 }
 
-//Sets the consumer for our useContext hook to update
 export default function Star({ id }: IProps) {
   return (
     <FavContext.Consumer>

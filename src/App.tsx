@@ -5,7 +5,7 @@ import Slideshow from "./components/Slideshow";
 import ArtDisplay from "./components/ArtDisplay";
 import Favourites from "./Favourites";
 import Star from "./components/Star";
-import { FavContext } from "./components/contexts";
+import { FavContext } from "./contexts";
 var background: string;
 var header: string;
 var hover: string;
