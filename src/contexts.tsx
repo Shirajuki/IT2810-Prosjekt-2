@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import { createContext } from "react";
 
 //Sets types for the components in favContext
 interface ContextTypes {
