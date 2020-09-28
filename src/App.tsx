@@ -13,6 +13,9 @@ var border: string;
 var text: string;
 var button: string;
 
+/*Function that takes in a color argument an sets global
+css variables based on these choices. The theme chosen is then
+saved in sessionStorage*/
 function setTheme(theme: string = "") {
   if (theme === "black") {
     background = "#171717";
@@ -46,16 +49,22 @@ function setTheme(theme: string = "") {
   document.documentElement.style.setProperty("--text-color", text);
   document.documentElement.style.setProperty("--button-color", button);
 }
+
 function App() {
+  //Declares a modal used for displaying the art
   const [modal, setModal] = useState({
     title: "",
     tab: "1",
   });
 
+  /*Checks if a theme has already been chosen for this tab 
+  by checking sessionStorage and setting it if so. If not
+  default values are used*/
   if (sessionStorage.getItem("theme") != null) {
     setTheme(sessionStorage.getItem("theme"));
   }
 
+  //Uses reduce to filter out favourites from Storage, used by FavContext
   const [favorites, setFavorites] = useState(
     Favourites.artList.reduce(
       (acc, title: string) => ({
@@ -66,13 +75,16 @@ function App() {
     )
   );
 
+  //Sets an installation as favourite
   function setFavorite(id: string, checked: boolean) {
     setFavorites((fs) => ({ ...fs, [id]: checked }));
     Favourites.setFavoriteInStorage(id, checked);
   }
+
   const slideShowModal = (title: string) => {
     setModal({ title: title, tab: modal.tab });
   };
+
   return (
     <FavContext.Provider value={{ favorites, setFavorite }}>
       <div className="wrapper">
